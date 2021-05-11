@@ -1,5 +1,7 @@
 const initialState = {
     reports : [],
+    previousreports : [],
+    currentreports : [],
     addreport : undefined,
     delreport : undefined,
     editreport : undefined
@@ -11,6 +13,16 @@ export default function PaymentReducer(state=initialState,action){
             return {
             ...state,
             reports : action.reports
+        };
+        case 'GET_PREVIOUS_REPORTS_SUCCESS':
+            return {
+            ...state,
+            previousreports : action.previousreports
+        };
+        case 'GET_CURRENT_REPORTS_SUCCESS':
+            return {
+            ...state,
+            currentreports : action.currentreports
         };
         case 'REPORT_ADDED' :
             return {

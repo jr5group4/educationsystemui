@@ -21,6 +21,44 @@ export const getReports = () => {
     };
 };
 
+export const getPreviousReportsSuccess = (reports) => {
+    console.log("inside getPreviousReportsSuccess method");
+    return {
+        type : 'GET_PREVIOUS_REPORTS_SUCCESS',reports
+    }
+};
+
+export const getPreviousReports = () => {
+    console.log("inside Get Previous Reports method");
+        return (dispatch)=> {
+        return axios.get(REPORTURL+"/getprevious/"+studentId)
+        .then(Response => {
+            localStorage.setItem("reports",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getPreviousReportsSuccess(Response.data));
+        })
+    };
+};
+
+export const getCurrentReportsSuccess = (reports) => {
+    console.log("inside getCurrentReportsSuccess method");
+    return {
+        type : 'GET_CURRENT_REPORTS_SUCCESS',reports
+    }
+};
+
+export const getCurrentReports = () => {
+    console.log("inside Get Current Reports method");
+        return (dispatch)=> {
+        return axios.get(REPORTURL+"/getcurrent/"+studentId)
+        .then(Response => {
+            localStorage.setItem("reports",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getCurrentReportsSuccess(Response.data));
+        })
+    };
+};
+
 export const addReportSuccess=()=>{
     console.log("inside addReportSuccess method");
     return {
