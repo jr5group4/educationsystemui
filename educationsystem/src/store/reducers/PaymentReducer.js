@@ -33,7 +33,7 @@ export default function PaymentReducer(state=initialState,action){
             return {
                 ...state,
                  editpayment : 'edited'
-            }
+            };
         default:
             return state
     }

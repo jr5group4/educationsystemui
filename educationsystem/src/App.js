@@ -10,6 +10,10 @@ import GetAllPayment from './components/GetAllPayments'
 import AddPayment from './components/AddPayment';
 import DeletePayment from './components/DeletePayment';
 import UpdatePayment from './components/UpdatePayment';
+import GetAllReports from './components/GetAllReports';
+import AddReport from  './components/AddReport';
+import DeleteReport from './components/DeleteReport';
+import UpdateReport from './components/UpdateReport';
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
             <Route path='/addpayment' exact component={AddPayment}></Route>
             <Route path="/payments/:paymentId" exact component={DeletePayment}></Route>
             <Route path='/editpayment' exact component={UpdatePayment}></Route>
+            <Route path='/reports' exact component={GetAllReports}></Route>
+            <Route path="/addreport" exact component={AddReport}></Route>
+            <Route path="/reports/:progressReportId" exact component={DeleteReport}></Route>
+            <Route path="/editreport" exact component={UpdateReport}></Route>
           </Switch>
         </Router>
     </div>
