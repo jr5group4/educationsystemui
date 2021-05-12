@@ -111,7 +111,7 @@ export const updateStudent = (payload) =>{
         phoneNumber : payload.phoneNumber,
         studentEmailId : payload.studentEmailId,
         dateOfBirth : payload.dateOfBirth
-    }
+    } 
     return (dispatch)=> {
         return axios.put(STUDENTURL+"/update",student)
         .then(Response => {
