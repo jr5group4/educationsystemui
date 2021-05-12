@@ -57,7 +57,7 @@ class GetAllStudent extends Component{
             </div>
         );
       }
-  }
+  } 
   function mapStateToProps(state) {
       return {
           students : state.StudentReducer.students,

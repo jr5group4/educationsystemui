@@ -15,7 +15,7 @@ class DeleteStudent extends Component{
         return(
             <div></div>
         );
-    }
+    } 
 }
 
 function mapStateToProps(state) {

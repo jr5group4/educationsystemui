@@ -15,7 +15,7 @@ class UpdateStudent extends Component{
             phoneNumber: props.location.state.student.phoneNumber,
             studentEmailId: props.location.state.student.studentEmailId
         }
-    }
+    } 
     componentDidMount(){
         console.log(this.props.location.state);
     }
