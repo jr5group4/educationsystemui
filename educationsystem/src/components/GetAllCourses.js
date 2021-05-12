@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
-import * as PaymentAction from '../store/actions/PaymentAction';
+import * as CourseAction from '../store/actions/CourseAction';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
  
-class GetAllPayment extends Component{
+class GetAllCourses extends Component{
     componentDidMount(){
-        this.props.PaymentAction.getPayments()
+        this.props.CourseAction.getCourses()
       }
       render(){
-        let stock = this.props.payments;
+        let stock = this.props.courses;
         let login = this.props.login;
        let userlogin = window.localStorage.getItem("login");
        console.log("from localstorage = "+userlogin);
@@ -25,29 +25,27 @@ class GetAllPayment extends Component{
               <table className="table table-striped" align="center" width="50%" border="2">
               <thead>
                   <tr>
-                      <th>PAYMENT_ID</th>
-                      <th>PAYMENT_DATE</th>
-                      <th>PAYMENT_DUE</th>
-                      <th>FEE_PAID</th>
-                      <th>FEE_STATUS</th>
                       <th>COURSE_ID</th>
+                      <th>COURSE_NAME</th>
+                      <th>DURATION</th>
+                      <th>START_DATE</th>
+                      <th>END_DATE</th>
                       <th>STUDENT_ID</th>
                   </tr>
                   </thead>
                   <tbody>
                       {
-                          stock.map( payment=>
-                      <tr key={payment.paymentId} align="center">
-                          <td>{payment.paymentId}</td>        
-                          <td>{payment.paymentDate}</td>
-                          <td>{payment.paymentDue}</td>
-                          <td>{payment.feePaid}</td> 
-                          <td>{payment.feeStatus}</td>
-                          <td>{payment.course.courseId}</td>
-                          <td>{payment.student.studentId}</td>
+                          stock.map( course=>
+                      <tr key={course.courseId} align="center">
+                          <td>{course.courseId}</td> 
+                          <td>{course.courseName}</td>        
+                          <td>{course.duration}</td>
+                          <td>{course.startDate}</td>
+                          <td>{course.endDate}</td> 
+                          <td>{course.student.studentId}</td>
                           <React.Fragment>
-                          <td><Link to ={{pathname: '/editpayment',state:{payment}}}> <button className="btn btn-warning">Update</button> </Link> </td>
-                          <td> <Link to={`/payments/${payment.paymentId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
+                          <td><Link to ={{pathname: '/editcourse',state:{course}}}> <button className="btn btn-warning">Update</button> </Link> </td>
+                          <td> <Link to={`/courses/${course.courseId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
                           </React.Fragment>
                       </tr>
                           )}
@@ -61,13 +59,13 @@ class GetAllPayment extends Component{
 }
 function mapStateToProps(state) {
     return {
-        payments : state.PaymentReducer.payments,
+        courses : state.CourseReducer.courses,
         login : state.LoginReducer.login
     };
 }
 function mapDispatchToProps(dispatch){
     return {
-       PaymentAction : bindActionCreators(PaymentAction, dispatch)
+       CourseAction : bindActionCreators(CourseAction, dispatch)
    };
 }
-export default connect(mapStateToProps,mapDispatchToProps)(GetAllPayment);
+export default connect(mapStateToProps,mapDispatchToProps)(GetAllCourses);

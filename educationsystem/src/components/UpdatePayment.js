@@ -13,7 +13,8 @@ class UpdatePayment extends Component{
             paymentDue : props.location.state.payment.paymentDue,
             feePaid : props.location.state.payment.feePaid,
             feeStatus : props.location.state.payment.feeStatus,
-            courseId : props.location.state.payment.course.courseId
+            courseId : props.location.state.payment.course.courseId,
+            studentId : props.location.state.payment.student.studentId
         }
     }
     componentDidMount(){
@@ -27,7 +28,8 @@ class UpdatePayment extends Component{
                 paymentDue : this.state.paymentDue,
                 feePaid : this.state.feePaid,
                 feeStatus : this.state.feeStatus,
-                courseId : this.state.courseId
+                courseId : this.state.courseId,
+                studentId : this.state.studentId
             }
             this.props.PaymentAction.editPayment(payload);
             this.props.history.push("/payments");
@@ -55,6 +57,8 @@ class UpdatePayment extends Component{
                        <input type="text" name="feeStatus" className="form-control" value={this.state.feeStatus} onChange={this.onChange}></input> <br></br>
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <label>Enter student ID</label>
+                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                     </div>
 						<button className="btn btn-success" onClick={this.updatePayment}>update payment</button>
                         <Link to="/payments"> <button className="btn btn-default">Cancel</button></Link> 

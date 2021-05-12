@@ -35,7 +35,8 @@ export const addPayment = (payload) =>{
         paymentDue : payload.paymentDue,
         feePaid  : payload.feePaid,
         feeStatus : payload.feeStatus,
-        courseId : payload.courseId
+        courseId : payload.courseId,
+        studentId : payload.studentId
     }
     return (dispatch)=> {
         return axios.post(PAYMENTURL+"/add",item)
@@ -110,7 +111,8 @@ export const editPayment = (payload) =>{
         paymentDue : payload.paymentDue,
         feePaid  : payload.feePaid,
         feeStatus : payload.feeStatus,
-        courseId : payload.courseId
+        courseId : payload.courseId,
+        studentId : payload.studentId
     }
     return (dispatch)=> {
         return axios.put(PAYMENTURL+"/update",payment)

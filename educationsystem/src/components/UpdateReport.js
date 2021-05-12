@@ -14,7 +14,8 @@ class UpdateReport extends Component{
             presentForTest : props.location.state.report.presentForTest,
             studentPercentage : props.location.state.report.studentPercentage,
             studentResult : props.location.state.report.studentResult,
-            courseId : props.location.state.report.course.courseId
+            courseId : props.location.state.report.course.courseId,
+            studentId : props.location.state.report.student.studentId
         }
     }
     componentDidMount(){
@@ -29,7 +30,8 @@ class UpdateReport extends Component{
             presentForTest : this.state.presentForTest,
             studentResult : this.state.studentResult,
             studentPercentage : this.state.studentPercentage,
-            courseId : this.state.courseId
+            courseId : this.state.courseId,
+            studentId : this.state.studentId
         }
         this.props.ProgressReportAction.editReport(payload);
         this.props.history.push("/reports");
@@ -59,6 +61,8 @@ class UpdateReport extends Component{
                        <input type="text" name="studentPercentage" className="form-control" value={this.state.studentPercentage} onChange={this.onChange}></input> <br></br>
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <label>Enter student ID</label>
+                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                     </div>
 						<button className="btn btn-success" onClick={this.updateReport}>update Report</button>
                         <Link to="/reports"> <button className="btn btn-default">Cancel</button></Link> 
