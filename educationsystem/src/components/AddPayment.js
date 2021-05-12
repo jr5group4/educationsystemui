@@ -13,7 +13,8 @@ class AddPayment extends Component{
             paymentDue : '',
             feePaid : '',
             feeStatus: '',
-            courseId :''
+            courseId :'',
+            studentId : ''
         }
         this.addNewPayment = this.addNewPayment.bind(this);
     }
@@ -24,7 +25,8 @@ class AddPayment extends Component{
             paymentDue : this.state.paymentDue,
             feePaid : this.state.feePaid,
             feeStatus : this.state.feeStatus,
-            courseId : this.state.courseId
+            courseId : this.state.courseId,
+            studentId : this.state.studentId
         }
         this.props.PaymentAction.addPayment(payload);
         this.props.history.push("/payments");
@@ -53,6 +55,8 @@ class AddPayment extends Component{
                        <input type="text" name="feeStatus" className="form-control" value={this.state.feeStatus} onChange={this.onChange}></input> <br></br>
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <label>Enter student ID</label>
+                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewPayment}>ADD Payment</button> &nbsp;&nbsp;

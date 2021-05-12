@@ -14,7 +14,8 @@ class AddReport extends Component{
             presentForTest : '',
             studentPercentage: '',
             studentResult:'',
-            courseId :''
+            courseId :'',
+            studentId : ''
         }
         this.addNewReport = this.addNewReport.bind(this);
     }
@@ -26,7 +27,8 @@ class AddReport extends Component{
             presentForTest : this.state.presentForTest,
             studentResult : this.state.studentResult,
             studentPercentage : this.state.studentPercentage,
-            courseId : this.state.courseId
+            courseId : this.state.courseId,
+            studentId : this.state.studentId
         }
         this.props.ProgressReportAction.addReport(payload);
         this.props.history.push("/reports");
@@ -57,6 +59,8 @@ class AddReport extends Component{
                        <input type="text" name="studentPercentage" className="form-control" value={this.state.studentPercentage} onChange={this.onChange}></input> <br></br>
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <label>Enter student ID</label>
+                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewReport}>ADD Report</button> &nbsp;&nbsp;

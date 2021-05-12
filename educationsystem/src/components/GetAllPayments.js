@@ -31,6 +31,7 @@ class GetAllPayment extends Component{
                       <th>FEE_PAID</th>
                       <th>FEE_STATUS</th>
                       <th>COURSE_ID</th>
+                      <th>STUDENT_ID</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -43,6 +44,7 @@ class GetAllPayment extends Component{
                           <td>{payment.feePaid}</td> 
                           <td>{payment.feeStatus}</td>
                           <td>{payment.course.courseId}</td>
+                          <td>{payment.student.studentId}</td>
                           <React.Fragment>
                           <td><Link to ={{pathname: '/editpayment',state:{payment}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                           <td> <Link to={`/payments/${payment.paymentId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>

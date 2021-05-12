@@ -21,7 +21,7 @@ export const getReports = () => {
     };
 };
 
-export const getPreviousReportsSuccess = (reports) => {
+/* export const getPreviousReportsSuccess = (reports) => {
     console.log("inside getPreviousReportsSuccess method");
     return {
         type : 'GET_PREVIOUS_REPORTS_SUCCESS',reports
@@ -57,7 +57,7 @@ export const getCurrentReports = () => {
             dispatch(getCurrentReportsSuccess(Response.data));
         })
     };
-};
+}; */
 
 export const addReportSuccess=()=>{
     console.log("inside addReportSuccess method");
@@ -74,7 +74,8 @@ export const addReport = (payload) =>{
         presentForTest  : payload.presentForTest,
         studentPercentage : payload.studentPercentage,
         studentResult : payload.studentResult,
-        courseId : payload.courseId
+        courseId : payload.courseId,
+        studentId : payload.studentId
     }
     return (dispatch)=> {
         return axios.post(REPORTURL+"/add",report)
@@ -127,7 +128,8 @@ export const editReport = (payload) =>{
         presentForTest  : payload.presentForTest,
         studentPercentage : payload.studentPercentage,
         studentResult : payload.studentResult,
-        courseId : payload.courseId
+        courseId : payload.courseId,
+        studentId : payload.studentId
     }
     return (dispatch)=> {
         return axios.put(REPORTURL+"/update",report)

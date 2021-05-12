@@ -32,6 +32,7 @@ class GetAllReports extends Component{
                       <th>PERCENTAGE</th>
                       <th>RESULT</th>
                       <th>COURSE_ID</th>
+                      <th>STUDENT_ID</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -45,6 +46,7 @@ class GetAllReports extends Component{
                           <td>{report.studentPercentage}</td>
                           <td>{report.studentResult}</td>
                           <td>{report.course.courseId}</td>
+                          <td>{report.student.studentId}</td>
                           <React.Fragment>
                            <td><Link to ={{pathname: '/editreport',state:{report}}}> <button className="btn btn-warning">Update</button> </Link> </td> 
                            <td> <Link to={`/reports/${report.progressReportId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td> 
