@@ -22,6 +22,7 @@ import AddCourse from './components/AddCourse';
 import GetAllCourses from './components/GetAllCourses';
 import DeleteCourse from './components/DeleteCourse';
 import UpdateCourse from './components/UpdateCourse';
+import GetStudentById from './components/GetStudentById';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route path="/courses" exact component={GetAllCourses}></Route>
             <Route path="/courses/:courseId" exact component={DeleteCourse}></Route>
             <Route path="/editcourse" exact component={UpdateCourse}></Route>
+            <Route path="/student/:studentId" exact component={GetStudentById}></Route>
           </Switch>
         </Router>
     </div>

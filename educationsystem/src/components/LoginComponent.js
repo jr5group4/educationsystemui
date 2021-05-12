@@ -36,8 +36,9 @@ import {Redirect} from 'react-router-dom';
                  return <Redirect to="/admin"></Redirect>
              } else if(login.role==="user"){
                  return <Redirect to="/user"></Redirect>
-             } else{
-                 alert("Invalid user...");
+             }
+              else {
+                 alert("Incorrect username/password");
                  window.location.href="/"
              }
          }

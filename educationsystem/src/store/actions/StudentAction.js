@@ -50,24 +50,24 @@ export const addStudent = (payload) =>{
     };
 };
 
-export const getStudentByIdSuccess = (student) => {
+export const getStudentByIdSuccess = (getstudent) => {
     console.log("inside getStudentByIdSuccess method");
     return {
-        type : 'GET_STUDENT_BY_ID_SUCCESS',student
+        type : 'GET_STUDENT_BY_ID_SUCCESS',getstudent
     }
 };
 
 export const getStudentById = (studentId) => {
     console.log("inside getStudentById method");
     return (dispatch)=> {
-        return axios.get(STUDENTURL+"/getbyid"+studentId)
+        return axios.get(STUDENTURL+"/getbyid/"+studentId)
         .then(Response => {
             localStorage.setItem("student",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getStudentByIdSuccess(Response.data));
         })
         .catch(Error =>{
-            console.log("error");
+            console.log("Error");
             throw(Error);
         });
     };
