@@ -14,6 +14,10 @@ import GetAllReports from './components/GetAllReports';
 import AddReport from  './components/AddReport';
 import DeleteReport from './components/DeleteReport';
 import UpdateReport from './components/UpdateReport';
+import AddCourse from './components/AddCourse';
+import GetAllCourses from './components/GetAllCourses';
+import DeleteCourse from './components/DeleteCourse';
+import UpdateCourse from './components/UpdateCourse';
 
 function App() {
   return (
@@ -26,13 +30,17 @@ function App() {
             <Route path="/user" exact component={User}></Route>
             <Route path="/register" exact component={RegisterUser}></Route>
             <Route path="/payments" exact component={GetAllPayment}></Route>
-            <Route path='/addpayment' exact component={AddPayment}></Route>
+            <Route path="/addpayment" exact component={AddPayment}></Route>
             <Route path="/payments/:paymentId" exact component={DeletePayment}></Route>
-            <Route path='/editpayment' exact component={UpdatePayment}></Route>
-            <Route path='/reports' exact component={GetAllReports}></Route>
+            <Route path="/editpayment" exact component={UpdatePayment}></Route>
+            <Route path="/reports" exact component={GetAllReports}></Route>
             <Route path="/addreport" exact component={AddReport}></Route>
             <Route path="/reports/:progressReportId" exact component={DeleteReport}></Route>
             <Route path="/editreport" exact component={UpdateReport}></Route>
+            <Route path="/addcourse" exact component={AddCourse}></Route>
+            <Route path="/courses" exact component={GetAllCourses}></Route>
+            <Route path="/courses/:courseId" exact component={DeleteCourse}></Route>
+            <Route path="/editcourse" exact component={UpdateCourse}></Route>
           </Switch>
         </Router>
     </div>
