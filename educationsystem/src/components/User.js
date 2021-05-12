@@ -22,6 +22,13 @@ class User extends Component{
                 <Link to="/addpayment">
                     <button className="btn btn-info">Add Payment</button>
                 </Link> &nbsp;
+                <Link to="/students">
+                    <button className="btn btn-info">View All Students</button>
+                </Link> &nbsp;
+                <Link to="/addstudent">
+                    <button className="btn btn-info">Add Student</button>
+                </Link> &nbsp;
+        
                 <button className="btn btn-warning" id="bt" onClick={this.logout}>Logout</button>
             </div>
         );

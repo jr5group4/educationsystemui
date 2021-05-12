@@ -14,6 +14,10 @@ import GetAllReports from './components/GetAllReports';
 import AddReport from  './components/AddReport';
 import DeleteReport from './components/DeleteReport';
 import UpdateReport from './components/UpdateReport';
+import GetAllStudent from './components/GetAllStudent';
+import AddStudent from './components/AddStudent';
+import UpdateStudent from './components/UpdateStudent';
+import DeleteStudent from './components/DeleteStudent';
 
 function App() {
   return (
@@ -33,6 +37,11 @@ function App() {
             <Route path="/addreport" exact component={AddReport}></Route>
             <Route path="/reports/:progressReportId" exact component={DeleteReport}></Route>
             <Route path="/editreport" exact component={UpdateReport}></Route>
+            <Route path="/addreport" exact component={AddReport}></Route>
+            <Route path="/students" exact component={GetAllStudent}></Route>
+            <Route path="/addstudent" exact component={AddStudent}></Route>
+            <Route path="/updatestudent" exact component={UpdateStudent}></Route>
+            <Route path="/students/:studentId" exact component={DeleteStudent}></Route>
           </Switch>
         </Router>
     </div>
