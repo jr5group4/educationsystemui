@@ -1,7 +1,7 @@
 const initialState = {
     students : [],
     addstudent : undefined,
-    getstudent : undefined,
+    getstudent : [],
     deletestudent : undefined,
     updatestudent : undefined
 

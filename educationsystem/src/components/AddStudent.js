@@ -70,5 +70,5 @@ function mapStateToProps(state) {
      StudentAction : bindActionCreators(StudentAction, dispatch)
       };
    }
-   
+    
    export default connect(mapStateToProps,mapDispatchToProps)(AddStudent);

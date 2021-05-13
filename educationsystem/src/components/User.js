@@ -39,7 +39,7 @@ class User extends Component{
             </div>
         );
     }
-}
+} 
 function mapStateToProps(state){
     return{
         login : state.LoginReducer.login

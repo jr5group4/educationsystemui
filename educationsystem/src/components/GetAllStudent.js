@@ -47,6 +47,7 @@ class GetAllStudent extends Component{
                             <React.Fragment>
                             <td><Link to ={{pathname: '/updatestudent',state:{student}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                             <td> <Link to={`/students/${student.studentId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
+                            <td> <Link to={`/student/${student.studentId}`}> <button className="btn btn-warning">View</button> </Link>  </td>
                             </React.Fragment>
                         </tr>
                             )}
@@ -57,7 +58,7 @@ class GetAllStudent extends Component{
             </div>
         );
       }
-  }
+  } 
   function mapStateToProps(state) {
       return {
           students : state.StudentReducer.students,
