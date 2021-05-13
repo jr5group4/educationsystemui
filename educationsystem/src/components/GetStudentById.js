@@ -5,28 +5,32 @@ import {bindActionCreators} from 'redux';
 import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
+
+
 class GetStudentById extends Component{
     componentDidMount(){
         const {StudentAction, match} = this.props;
         StudentAction.getStudentById(match.params.studentId);
     }
+       
     render(){
-        /* if(this.props.getstudent !== undefined){
-            this.props.history.push("/");
-        } */
-        let student = this.props.getstudent;
         
-        return(<div>
-                    
-                        {student.studentId}<br></br>
-                        {student.firstName}<br></br>
-                        {student.lastName}<br></br>
-                        {student.phoneNumber}<br></br>
-                        {student.studentEmailId}<br></br>
-                        {student.dateOfBirth}<br></br>
-                    
-            <Link to="/students"><button className="btn btn-info">Back to User Page</button></Link></div>
+        let student = this.props.getstudent;
+
+        return(
+            <div>
+            <table className="table table-striped" align="center" width="50%" border="2">
+                <tr><th>STUDENT ID</th><td>{student.studentId}</td></tr>
+                <tr><th>FIRST NAME</th><td>{student.firstName}</td></tr>
+                <tr><th>LAST NAME</th><td>{student.lastName}</td></tr>
+                <tr><th>PHONE NUMBER</th><td>{student.phoneNumber}</td></tr>
+                <tr><th>EMAIL ID</th><td>{student.studentEmailId}</td></tr>
+                <tr><th>DATE OF BIRTH</th><td>{student.dateOfBirth}</td></tr>
+            </table>
+            <Link to="/students"><button className="btn btn-info">Back to User Page</button></Link>
+        </div>
         );
+        
     }
 }
 function mapStateToProps(state) {
