@@ -20,6 +20,9 @@ class Admin extends Component{
                 <Link to="/addcourse">
                     <button className="btn btn-info">Add Course</button>
                 </Link> &nbsp;
+                <Link to="/addtrainer">
+                    <button className="btn btn-info">Add Trainer</button>
+                </Link> &nbsp;
                 <button className="btn btn-warning" id="bt" onClick={this.logout}>Logout</button>
             </div>
         );
