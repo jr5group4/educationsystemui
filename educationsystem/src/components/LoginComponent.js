@@ -3,6 +3,9 @@ import {connect } from 'react-redux';
 import * as LoginAction from '../store/actions/LoginAction';
 import {bindActionCreators} from 'redux';
 import {Redirect} from 'react-router-dom';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
  class LoginComponent extends Component{
      constructor(props){
@@ -37,26 +40,31 @@ import {Redirect} from 'react-router-dom';
              } else if(login.role==="user"){
                  return <Redirect to="/user"></Redirect>
              }
-              else {
+             /*  else {
                  alert("Incorrect username/password");
                  window.location.href="/"
-             }
+             } */
          }
          return(
-             <div>
-                 <h1>Login Page</h1>
-                 <form>
+             <div >
+                 <Form action="/action_page.php" class="was-validated">
                      <div className="form-group">
                          <label>Username</label>
-                         <input type="text" name="userId" className="form-control" value={this.state.userId} onChange={this.onChange} required></input><br></br>
+                         <input type="text" name="userId" placeholder="Enter Username" className="form-control" value={this.state.userId} onChange={this.onChange} required></input><br></br>
+                         <div class="valid-feedback">Valid.</div>
+                         <div class="invalid-feedback">Please fill out this field.</div>
+                         </div>
+                         <div className="form-group">
                          <label>Password</label>
-                         <input type="text" name="userPassword" className="form-control" value={this.state.userPassword} onChange={this.onChange} required></input><br></br>
+                         <input type="text" name="userPassword" placeholder="Password" className="form-control" value={this.state.userPassword} onChange={this.onChange} required></input><br></br>
+                         </div>
+                         <div className="form-group">
                          <label>Role</label>
-                         <input type="text" name="role" className="form-control" value={this.state.role} onChange={this.onChange} required></input><br></br>
+                         <input type="text" name="role" placeholder="Enter role" className="form-control" value={this.state.role} onChange={this.onChange} required></input><br></br>
                      </div>
                      <button className="btn btn-success" onClick={this.validation}>Login</button>
                      <button className="btn btn-info" id="bt" onClick={this.signup}>Sign Up</button>
-                 </form>
+                     </Form>
              </div>
          );
      }

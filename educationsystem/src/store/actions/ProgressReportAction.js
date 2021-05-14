@@ -52,7 +52,7 @@ export const getCurrentReports = (studentId) => {
         return (dispatch)=> {
         return axios.get(REPORTURL+"/getcurrent/"+studentId)
         .then(Response => {
-            localStorage.setItem("studentId",JSON.stringify(Response.data));
+            localStorage.setItem("currentreports",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getCurrentReportsSuccess(Response.data));
         })

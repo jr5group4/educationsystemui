@@ -23,9 +23,9 @@ class GetStudentById extends Component{
         let preports =this.props.previousreports;
         let creports=this.props.currentreports;
         let payment=this.props.getpayment;
-        if(payment===undefined){
-            alert("No payment");
-        }
+        /* if(payment===undefined){
+            payment=null;
+        } */
         return(
             <div>
                 STUDENT DETAILS
