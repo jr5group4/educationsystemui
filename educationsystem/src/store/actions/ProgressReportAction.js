@@ -21,43 +21,43 @@ export const getReports = () => {
     };
 };
 
-/* export const getPreviousReportsSuccess = (reports) => {
+ export const getPreviousReportsSuccess = (previousreports) => {
     console.log("inside getPreviousReportsSuccess method");
     return {
-        type : 'GET_PREVIOUS_REPORTS_SUCCESS',reports
+        type : 'GET_PREVIOUS_REPORTS_SUCCESS',previousreports
     }
 };
 
-export const getPreviousReports = () => {
+export const getPreviousReports = (studentId) => {
     console.log("inside Get Previous Reports method");
         return (dispatch)=> {
         return axios.get(REPORTURL+"/getprevious/"+studentId)
         .then(Response => {
-            localStorage.setItem("reports",JSON.stringify(Response.data));
+            localStorage.setItem("previousreports",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getPreviousReportsSuccess(Response.data));
         })
     };
 };
 
-export const getCurrentReportsSuccess = (reports) => {
+export const getCurrentReportsSuccess = (currentreports) => {
     console.log("inside getCurrentReportsSuccess method");
     return {
-        type : 'GET_CURRENT_REPORTS_SUCCESS',reports
+        type : 'GET_CURRENT_REPORTS_SUCCESS',currentreports
     }
 };
 
-export const getCurrentReports = () => {
+export const getCurrentReports = (studentId) => {
     console.log("inside Get Current Reports method");
         return (dispatch)=> {
         return axios.get(REPORTURL+"/getcurrent/"+studentId)
         .then(Response => {
-            localStorage.setItem("reports",JSON.stringify(Response.data));
+            localStorage.setItem("studentId",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getCurrentReportsSuccess(Response.data));
         })
     };
-}; */
+}; 
 
 export const addReportSuccess=()=>{
     console.log("inside addReportSuccess method");

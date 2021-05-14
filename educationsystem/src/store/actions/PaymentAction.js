@@ -51,19 +51,19 @@ export const addPayment = (payload) =>{
     };
 };
 
-export const getPaymentByCodeSuccess = (payment) => {
+export const getPaymentByCodeSuccess = (getpayment) => {
     console.log("inside getPaymentByCodeSuccess method");
     return {
-        type : 'GET_PAYEMENT_BY_CODE_SUCCESS',payment
+        type : 'GET_PAYEMENT_BY_CODE_SUCCESS',getpayment
     }
 };
 
-export const getPaymentByCode = (code) => {
+export const getPaymentByCode = (studentId) => {
     console.log("inside getPaymentByCode method");
     return (dispatch)=> {
-        return axios.get(PAYMENTURL+"/getbyid"+code)
+        return axios.get(PAYMENTURL+"/getbyid/"+studentId)
         .then(Response => {
-            localStorage.setItem("item",JSON.stringify(Response.data));
+            localStorage.setItem("getpayment",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getPaymentByCodeSuccess(Response.data));
         })
