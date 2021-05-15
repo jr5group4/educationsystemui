@@ -63,7 +63,7 @@ export const getTrainerById = (trainerId) => {
     return (dispatch)=> {
         return axios.get(TRAINERURL+"/getbyid/"+trainerId)
         .then(Response => {
-            localStorage.setItem("gettrainer",JSON.stringify(Response.data));
+            localStorage.setItem("trainers",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getTrainerByIdSuccess(Response.data));
         })

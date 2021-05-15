@@ -16,6 +16,7 @@ class GetCourseById extends Component{
     render(){
         
         let course = this.props.getcourse;
+        let newstudent=course.student;
 
         return(
             <div>
@@ -25,7 +26,7 @@ class GetCourseById extends Component{
                 <tr><th>DURATION</th><td>{course.duration}</td></tr>
                 <tr><th>START DATE</th><td>{course.startDate}</td></tr>
                 <tr><th>END DATE</th><td>{course.endDate}</td></tr>
-                <tr><th>STUDENT ID</th><td>{course.student.studentId}</td></tr>
+                 <tr><th>STUDENT ID</th><td>{newstudent.studentId}</td></tr> 
             </table>
             <Link to="/courses"><button className="btn btn-info">Back to User Page</button></Link>
         </div>
