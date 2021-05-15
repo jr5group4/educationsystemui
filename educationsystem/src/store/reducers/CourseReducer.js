@@ -1,7 +1,7 @@
 const initialState = {
     courses : [],
     addcourse : undefined,
-    getcourse : undefined,
+    getcourse : [],
     delcourse : undefined,
     editcourse : undefined
 
@@ -19,7 +19,7 @@ export default function CourseReducer(state=initialState,action){
                 ...state,
                 addcourse : 'added'
         };
-        case 'GET_COURSE_BY_CODE_SUCCESS' :
+        case 'GET_COURSE_BY_ID_SUCCESS' :
             return {
                 ...state,
                 getcourse : action.getcourse

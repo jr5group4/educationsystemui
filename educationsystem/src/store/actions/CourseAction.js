@@ -50,21 +50,21 @@ export const addCourse = (payload) =>{
     };
 };
 
-export const getCourseByCodeSuccess = (course) => {
-    console.log("inside getCourseByCodeSuccess method");
+export const getCourseByIdSuccess = (getcourse) => {
+    console.log("inside getCourseByIdSuccess method");
     return {
-        type : 'GET_COURSE_BY_CODE_SUCCESS',course
+        type : 'GET_COURSE_BY_ID_SUCCESS',getcourse
     }
 };
 
-export const getCourseByCode = (code) => {
-    console.log("inside getCourseByCode method");
+export const getCourseById = (courseId) => {
+    console.log("inside getCourseById method");
     return (dispatch)=> {
-        return axios.get(COURSEURL+"/getbyid"+code)
+        return axios.get(COURSEURL+"/getbyid/"+courseId)
         .then(Response => {
-            localStorage.setItem("item",JSON.stringify(Response.data));
+            localStorage.setItem("course",JSON.stringify(Response.data));
             console.log("api call");
-            dispatch(getCourseByCodeSuccess(Response.data));
+            dispatch(getCourseByIdSuccess(Response.data));
         })
         .catch(Error =>{
             console.log("error");

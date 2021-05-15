@@ -1,7 +1,7 @@
 const initialState = {
     trainers : [],
     addtrainer : undefined,
-    gettrainer : undefined,
+    gettrainer : [],
     deltrainer : undefined,
     edittrainer : undefined
 
@@ -19,7 +19,7 @@ export default function TrainerReducer(state=initialState,action){
                 ...state,
                 addtrainer : 'added'
         };
-        case 'GET_TRAINER_BY_CODE_SUCCESS' :
+        case 'GET_TRAINER_BY_ID_SUCCESS' :
             return {
                 ...state,
                 gettrainer : action.gettrainer

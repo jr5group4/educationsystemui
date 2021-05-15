@@ -46,6 +46,7 @@ class GetAllTrainers extends Component{
                           <React.Fragment>
                           <td><Link to ={{pathname: '/edittrainer',state:{trainer}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                           <td> <Link to={`/trainers/${trainer.trainerId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
+                          <td> <Link to={`/trainer/${trainer.trainerId}`}> <button className="btn btn-danger">View</button> </Link>  </td>
                           </React.Fragment>
                       </tr>
                           )}

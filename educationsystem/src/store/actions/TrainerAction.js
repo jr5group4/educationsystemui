@@ -51,46 +51,24 @@ export const addTrainer = (payload) =>{
     };
 };
 
-export const getTrainerByCodeSuccess = (trainer) => {
-    console.log("inside getTrainerByCodeSuccess method");
+export const getTrainerByIdSuccess = (gettrainer) => {
+    console.log("inside getTrainerByIdSuccess method");
     return {
-        type : 'GET_TRAINER_BY_CODE_SUCCESS',trainer
+        type : 'GET_TRAINER_BY_ID_SUCCESS',gettrainer
     }
 };
 
-export const getTrainerByCode = (code) => {
-    console.log("inside getTrainerByCode method");
+export const getTrainerById = (trainerId) => {
+    console.log("inside getTrainerById method");
     return (dispatch)=> {
-        return axios.get(TRAINERURL+"/getbyid"+code)
+        return axios.get(TRAINERURL+"/getbyid/"+trainerId)
         .then(Response => {
-            localStorage.setItem("item",JSON.stringify(Response.data));
+            localStorage.setItem("gettrainer",JSON.stringify(Response.data));
             console.log("api call");
-            dispatch(getTrainerByCodeSuccess(Response.data));
+            dispatch(getTrainerByIdSuccess(Response.data));
         })
         .catch(Error =>{
             console.log("error");
-            throw(Error);
-        });
-    };
-};
-
-export const deleteTrainerSuccess=()=>{
-    console.log("inside deleteTrainerSuccess method");
-    return {
-        type : 'TRAINER_DELETED'
-    }
-};
-
-export const deleteTrainer = (trainerId) =>{
-    console.log("inside deleteTrainer method");
-    return (dispatch)=> {
-        return axios.delete(TRAINERURL+"/delete/"+trainerId)
-        .then(Response => {
-            console.log("api call");
-            dispatch(deleteTrainerSuccess());
-        })
-        .catch(Error=> {
-            console.log("Error");
             throw(Error);
         });
     };

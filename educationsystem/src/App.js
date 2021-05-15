@@ -27,6 +27,8 @@ import GetAllTrainers from './components/GetAllTrainers';
 import DeleteTrainer from './components/DeleteTrainer';
 import UpdateTrainer from './components/UpdateTrainer';
 import GetStudentById from './components/GetStudentById';
+import GetCourseById from './components/GetCourseById';
+import GetTrainerById from './components/GetTrainerById';
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
             <Route path="/trainers/:trainerId" exact component={DeleteTrainer}></Route>
             <Route path="/edittrainer" exact component={UpdateTrainer}></Route>
             <Route path="/student/:studentId" exact component={GetStudentById}></Route>
+            <Route path="/course/:courseId" exact component={GetCourseById}></Route>
+            <Route path="/trainer/:trainerId" exact component={GetTrainerById}></Route>
           </Switch>
         </Router>
     </div>
