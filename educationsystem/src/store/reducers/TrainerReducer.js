@@ -2,9 +2,10 @@ const initialState = {
     trainers : [],
     addtrainer : undefined,
     gettrainer : [],
+    gettrainercourse : [],
     deltrainer : undefined,
-    edittrainer : undefined
-
+    edittrainer : undefined,
+    registertrainer : undefined
 }
 
 export default function TrainerReducer(state=initialState,action){
@@ -24,6 +25,11 @@ export default function TrainerReducer(state=initialState,action){
                 ...state,
                 gettrainer : action.gettrainer
         };
+        case 'GET_TRAINER_BY_COURSE_SUCCESS' :
+            return {
+                ...state,
+                gettrainercourse : action.gettrainercourse
+        };
         case 'TRAINER_DELETED' :
             return {
                 ...state,
@@ -33,6 +39,11 @@ export default function TrainerReducer(state=initialState,action){
             return {
                 ...state,
                  edittrainer : 'edited'
+            };
+        case 'TRAINER_REGISTERED' :
+            return {
+                ...state,
+                registertrainer : 'registered'
             };
         default:
             return state

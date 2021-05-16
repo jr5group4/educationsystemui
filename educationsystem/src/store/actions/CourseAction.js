@@ -21,6 +21,44 @@ export const getCourses = () => {
     };
 };
 
+export const getUpcommingCoursesSuccess = (upcommingcourses) => {
+    console.log("inside getAllCoursesSuccess method");
+    return{
+        type : 'GET_ALL_UPCOMMING_COURSES_SUCCESS',upcommingcourses
+    }
+};
+
+export const getUpcommingCourses = () => {
+    console.log("inside Get All Upcomming Courses method");
+        return (dispatch)=> {
+        return axios.get(COURSEURL+"/getallupcomming")
+        .then(Response => {
+            localStorage.setItem("upcommingcourses",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getUpcommingCoursesSuccess(Response.data));
+        })
+    };
+};
+
+export const getRegisteredCoursesSuccess = (registeredcourses) => {
+    console.log("inside getRegisteredCoursesSuccess method");
+    return{
+        type : 'GET_ALL_REGISTERED_COURSES_SUCCESS',registeredcourses
+    }
+};
+
+export const getRegisteredCourses = (studentId) => {
+    console.log("inside Get All Registered Courses method");
+        return (dispatch)=> {
+        return axios.get(COURSEURL+"/getallregistered/"+studentId)
+        .then(Response => {
+            localStorage.setItem("registeredcourses",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getRegisteredCoursesSuccess(Response.data));
+        })
+    };
+};
+
 export const addCourseSuccess=()=>{
     console.log("inside addCourseSuccess method");
     return {
@@ -94,6 +132,30 @@ export const deleteCourse = (courseId) =>{
         });
     };
 };
+
+export const registerCourseSuccess=()=>{
+    console.log("inside registerCourseSuccess method");
+    return {
+        type : 'COURSE_REGISTERED'
+    }
+};
+
+export const registerCourse = (courseId,studentId) =>{
+    console.log("inside registerCourse method");
+    return (dispatch)=> {
+        return axios.put(COURSEURL+"/register/"+courseId+"/"+studentId)
+        .then(Response => {
+            console.log("api call");
+            dispatch(registerCourseSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};
+
+
 
 export const editCourseSuccess=()=>{
     console.log("inside editCourseSuccess method");

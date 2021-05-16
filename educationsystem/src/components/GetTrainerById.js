@@ -25,7 +25,7 @@ class GetTrainerById extends Component{
                 <tr><th>PHONE NUMBER</th><td>{trainer.phoneNumber}</td></tr>
                 <tr><th>TRAINER EXPERIENCE</th><td>{trainer.trainerExperience}</td></tr>
                 <tr><th>TRAINER EMAIL ID</th><td>{trainer.trainerEmailId}</td></tr>
-                <tr><th>COURSE ID</th><td>{newcourse.courseId}</td></tr>
+                {/* <tr><th>COURSE ID</th><td>{newcourse.courseId}</td></tr> */}
             </table>
             <Link to="/trainers"><button className="btn btn-info">Back to User Page</button></Link>
         </div>
