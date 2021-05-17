@@ -104,3 +104,48 @@ export const editTrainer = (payload) =>{
         });
     };
 };
+
+ export const getTrainerByCourseSuccess = (gettrainercourse) => {
+    console.log("inside getTrainerByCourseSuccess method");
+    return {
+        type : 'GET_TRAINER_BY_COURSE_SUCCESS',gettrainercourse
+    }
+};
+
+export const getTrainerByCourse = (courseId) => {
+    console.log("inside getTrainerByCourse method");
+    return (dispatch)=> {
+        return axios.get(TRAINERURL+"/getbycourse/"+courseId)
+        .then(Response => {
+            localStorage.setItem("gettrainercourse",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getTrainerByCourseSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+}; 
+
+export const registerTrainerSuccess=()=>{
+    console.log("inside registerTrainerSuccess method");
+    return {
+        type : 'TRAINER_REGISTERED'
+    }
+};
+
+export const registerTrainer = (trainerId,studentId) =>{
+    console.log("inside registerTrainer method");
+    return (dispatch)=> {
+        return axios.put(TRAINERURL+"/register/"+trainerId+"/"+studentId)
+        .then(Response => {
+            console.log("api call");
+            dispatch(registerTrainerSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};

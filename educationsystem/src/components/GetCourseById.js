@@ -26,7 +26,11 @@ class GetCourseById extends Component{
                 <tr><th>DURATION</th><td>{course.duration}</td></tr>
                 <tr><th>START DATE</th><td>{course.startDate}</td></tr>
                 <tr><th>END DATE</th><td>{course.endDate}</td></tr>
+<<<<<<< HEAD
                 {/*  <tr><th>STUDENT ID</th><td>{newstudent.studentId}</td></tr>  */}
+=======
+                 {/* <tr><th>STUDENT ID</th><td>{newstudent.studentId}</td></tr>  */}
+>>>>>>> c8314c157bf1e14a7413027a45be96e48f5cc29a
             </table>
             <Link to="/courses"><button className="btn btn-info">Back to User Page</button></Link>
         </div>

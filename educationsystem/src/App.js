@@ -29,6 +29,9 @@ import UpdateTrainer from './components/UpdateTrainer';
 import GetStudentById from './components/GetStudentById';
 import GetCourseById from './components/GetCourseById';
 import GetTrainerById from './components/GetTrainerById';
+import RegisterCourse from './components/RegisterCourse';
+import GetTrainerByCourse from './components/GetTrainerByCourse';
+import RegisterTrainer from './components/RegisterTrainer';
 
 function App() {
   return (
@@ -64,6 +67,9 @@ function App() {
             <Route path="/student/:studentId" exact component={GetStudentById}></Route>
             <Route path="/course/:courseId" exact component={GetCourseById}></Route>
             <Route path="/trainer/:trainerId" exact component={GetTrainerById}></Route>
+            <Route path="/register/:courseId/:studentId" exact component={RegisterCourse}></Route>
+            <Route path="/trainerbycourse/:courseId" exact component={GetTrainerByCourse}></Route>
+            <Route path="/registertrainer/:trainerId/:studentId" exact component={RegisterTrainer}></Route>
           </Switch>
         </Router>
     </div>
