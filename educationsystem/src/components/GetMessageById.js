@@ -22,8 +22,8 @@ class GetMessageById extends Component{
             <table className="table table-striped" align="center" width="50%" border="2">
                 <tr><th>MESSAGE ID</th><td>{message.messageId}</td></tr>
                 <tr><th>MESSAGE DESCRIPTION</th><td>{message.messageDescription}</td></tr>
-                <tr><th>STUDENT ID</th><td>{message.studentDetails.studentId}</td></tr>  
-                {/* <tr><th>STUDENT ID</th><td>{message.studentDetails.studentId}</td></tr>  */}
+               <tr><th>STUDENT ID</th><td>{message.studentDetails.studentId}</td></tr>  
+               
             </table>
             <Link to="/messages"><button className="btn btn-info">Back to User Page</button></Link>
         </div>

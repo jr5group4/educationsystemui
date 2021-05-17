@@ -44,19 +44,19 @@ class AddTrainer extends Component{
            <div>
                <h1>Add New Trainer </h1>
                <form >
-                   <div className="form-group">
+                   <div className="form-group col-md-4 offset-md-4 offset-md-4">
                        <label>Enter name of the trainer </label>
-                       <input type="text" name="trainerName" className="form-control" value={this.state.trainerName} onChange={this.onChange}  required="required"></input><br></br>
+                       <input type="text" name="trainerName" placeholder="Enter name of the trainer" className="form-control" value={this.state.trainerName} onChange={this.onChange}  required="required"></input><br></br>
                        <label>Enter phone number of the trainer</label>
-                       <input type="text" name="phoneNumber" className="form-control" value={this.state.phoneNumber} onChange={this.onChange}></input><br></br>
+                       <input type="text" name="phoneNumber" placeholder="Enter phone number of the trainer" className="form-control" value={this.state.phoneNumber} onChange={this.onChange}></input><br></br>
                        <label>Enter experience of the trainer</label>
-                       <input type="text" name="trainerExperience" className="form-control" value={this.state.trainerExperience} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="trainerExperience" placeholder="Enter trainer experience" className="form-control" value={this.state.trainerExperience} onChange={this.onChange}></input> <br></br>
                        <label>Enter email address of the trainer</label>
-                       <input type="text" name="trainerEmailId" className="form-control" value={this.state.trainerEmailId} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="trainerEmailId" placeholder="Enter trainer email-id" className="form-control" value={this.state.trainerEmailId} onChange={this.onChange}></input> <br></br>
                        {/* <label>Enter student ID</label>
                        <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br> */}
                        <label>Enter course ID</label>
-                       <input type="text" name="courseId" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewTrainer}>ADD Trainer</button> &nbsp;&nbsp;
                        <Link to="/trainers"> <button className="btn btn-default">Cancel</button></Link> 

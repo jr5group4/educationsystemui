@@ -23,16 +23,13 @@ class Admin extends Component{
                 <Link to="/addmessage">
                     <button className="btn btn-info">Add Message</button>
                 </Link> &nbsp;
-                <Link to="/updatemessage">
-                    <button className="btn btn-info">Update Message</button>
-                </Link> &nbsp;
-                <Link to="/deletemessage">
-                    <button className="btn btn-info">Delete Message</button>
-                    </Link> &nbsp;    
+                <Link to="/messages">
+                    <button className="btn btn-info">View All Messages</button>
+                </Link> &nbsp;  
                 <Link to="/addtrainer">
                     <button className="btn btn-info">Add Trainer</button>
                 </Link> &nbsp;
-                <button className="btn btn-warning" id="bt" onClick={this.logout}>Logout</button>
+                <button className="btn btn-danger" id="bt" onClick={this.logout}>Logout</button>
             </div>
         );
     }

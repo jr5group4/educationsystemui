@@ -41,13 +41,13 @@ class GetAllMessage extends Component{
                           <React.Fragment>
                           <td><Link to ={{pathname: '/updatemessage',state:{message}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                           <td> <Link to={`/messages/${message.messageId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
-                          <td> <Link to={`/message/${message.messageId}`}> <button className="btn btn-info">View</button> </Link>  </td>
+                          <td> <Link to={{pathname:`/message/${message.messageId}`,state:{message}}}> <button className="btn btn-info">View</button> </Link>  </td>
                           </React.Fragment>
                       </tr>
                           )}
                   </tbody>
               </table> <br></br> 
-              <Link to="/user"><button className="btn btn-info">Back to User Page</button></Link>
+              <Link to="/user"><button className="btn btn-info">Back</button></Link>
               
           </div>
       );

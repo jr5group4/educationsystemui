@@ -36,11 +36,11 @@ class AddMessage extends Component{
            <div>
                <h1>Add New Message </h1>
                <form >
-                   <div className="form-group">
+                   <div className="form-group col-md-4 offset-md-4 offset-md-4">
                        <label>Enter message description</label><br></br>
-                       <textarea rows="3" cols="70" name="messageDescription" className="form-control" value={this.state.messageDescription} onChange={this.onChange}  required="required"></textarea> <br></br>
+                       <textarea rows="3" cols="70" name="messageDescription" placeholder="Enter Message Description" className="form-control" value={this.state.messageDescription} onChange={this.onChange}  required="required"></textarea> <br></br>
                        <label>Enter student ID</label>
-                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="studentId" className="form-control" placeholder="Enter student Id" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewMessage}>Submit</button> &nbsp;&nbsp;

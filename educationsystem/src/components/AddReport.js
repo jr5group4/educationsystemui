@@ -46,21 +46,21 @@ class AddReport extends Component{
            <div>
                <h1>Add New Progress Report </h1>
                <form >
-                   <div className="form-group">
+                   <div className="form-group col-md-4 offset-md-4 offset-md-4">
                        <label>Enter Student's marks </label>
-                       <input type="text" name="studentMarks" className="form-control" value={this.state.studentMarks} onChange={this.onChange}  required="required"></input><br></br>
+                       <input type="text" name="studentMarks" placeholder="Enter student's marks" className="form-control" value={this.state.studentMarks} onChange={this.onChange}  required="required"></input><br></br>
                        <label>Enter Student's grade</label>
-                       <input type="text" name="studentGrade" className="form-control" value={this.state.studentGrade} onChange={this.onChange}></input><br></br>
+                       <input type="text" name="studentGrade" placeholder="Enter student's grade" className="form-control" value={this.state.studentGrade} onChange={this.onChange}></input><br></br>
                        <label>Attendance(present/absent)</label>
-                       <input type="text" name="presentForTest" className="form-control" value={this.state.presentForTest} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="presentForTest" placeholder="Enter attendence" className="form-control" value={this.state.presentForTest} onChange={this.onChange}></input> <br></br>
                        <label>Enter Student's result</label>
-                       <input type="text" name="studentResult" className="form-control" value={this.state.studentResult} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="studentResult" placeholder="Enter students's result" className="form-control" value={this.state.studentResult} onChange={this.onChange}></input> <br></br>
                        <label>Enter Student's percentage</label>
-                       <input type="text" name="studentPercentage" className="form-control" value={this.state.studentPercentage} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="studentPercentage" placeholder="Enter student's percentage" className="form-control" value={this.state.studentPercentage} onChange={this.onChange}></input> <br></br>
                        <label>Enter course ID</label>
-                       <input type="text" name="courseId" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
                        <label>Enter student ID</label>
-                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="studentId" placeholder="Enter student Id" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewReport}>ADD Report</button> &nbsp;&nbsp;

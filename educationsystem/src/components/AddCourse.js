@@ -42,15 +42,15 @@ class AddCourse extends Component{
            <div>
                <h1>Add New Course </h1>
                <form >
-                   <div className="form-group">
+                   <div className="form-group col-md-4 offset-md-4 offset-md-4">
                        <label>Enter name of the course </label>
-                       <input type="text" name="courseName" className="form-control" value={this.state.courseName} onChange={this.onChange}  required="required"></input><br></br>
+                       <input type="text" name="courseName" placeholder="Enter course name" className="form-control" value={this.state.courseName} onChange={this.onChange}  required="required"></input><br></br>
                        <label>Enter duration of the course</label>
-                       <input type="text" name="duration" className="form-control" value={this.state.duration} onChange={this.onChange}></input><br></br>
+                       <input type="text" name="duration" placeholder="Enter course duration" className="form-control" value={this.state.duration} onChange={this.onChange}></input><br></br>
                        <label>Enter starting date</label>
-                       <input type="date" name="startDate" className="form-control" value={this.state.startDate} onChange={this.onChange}></input> <br></br>
+                       <input type="date" name="startDate" placeholder="Enter course starting date" className="form-control" value={this.state.startDate} onChange={this.onChange}></input> <br></br>
                        <label>Enter ending date</label>
-                       <input type="date" name="endDate" className="form-control" value={this.state.endDate} onChange={this.onChange}></input> <br></br>
+                       <input type="date" name="endDate" placeholder="Enter course ending date" className="form-control" value={this.state.endDate} onChange={this.onChange}></input> <br></br>
                        <label>Enter student ID</label>
                        <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        

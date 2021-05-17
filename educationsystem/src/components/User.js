@@ -42,7 +42,7 @@ class User extends Component{
                 <Link to="/trainers">
                     <button className="btn btn-info">View All Trainers</button>
                 </Link> &nbsp;
-                <button className="btn btn-warning" id="bt" onClick={this.logout}>Logout</button>
+                <button className="btn btn-danger" id="bt" onClick={this.logout}>Logout</button>
             </div>
         );
     }
