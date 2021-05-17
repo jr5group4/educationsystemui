@@ -1,7 +1,7 @@
 const initialState = {
     payments : [],
     addpayment : undefined,
-    getpayment : undefined,
+    getpayment : [],
     delpayment : undefined,
     editpayment : undefined
 
@@ -19,10 +19,10 @@ export default function PaymentReducer(state=initialState,action){
                 ...state,
                 addpayment : 'added'
         };
-        case 'GET_PAYMENT_BY_CODE_SUCCESS' :
+        case 'GET_PAYEMENT_BY_CODE_SUCCESS' :
             return {
                 ...state,
-                getapayment : action.getpayment
+                getpayment : action.getpayment
         };
         case 'PAYMENT_DELETED' :
             return {
