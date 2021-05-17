@@ -23,6 +23,11 @@ import GetAllCourses from './components/GetAllCourses';
 import DeleteCourse from './components/DeleteCourse';
 import UpdateCourse from './components/UpdateCourse';
 import GetStudentById from './components/GetStudentById';
+import AddMessage from './components/AddMessage';
+import GetAllMessage from './components/GetAllMessage';
+import UpdateMessage from './components/UpdateMessage';
+import DeleteMessage from './components/DeleteMessage';
+import GetMessageById from './components/GetMessageById';
 
 function App() {
   return (
@@ -52,6 +57,11 @@ function App() {
             <Route path="/courses/:courseId" exact component={DeleteCourse}></Route>
             <Route path="/editcourse" exact component={UpdateCourse}></Route>
             <Route path="/student/:studentId" exact component={GetStudentById}></Route>
+            <Route path="/addmessage" exact component={AddMessage}></Route>
+            <Route path="/messages" exact component={GetAllMessage}></Route>
+            <Route path="/updatemessage" exact component={UpdateMessage}></Route>
+            <Route path="/messages/:messageId" exact component={DeleteMessage}></Route>
+            <Route path="/message/:messageId" exact component={GetMessageById}></Route>
           </Switch>
         </Router>
     </div>

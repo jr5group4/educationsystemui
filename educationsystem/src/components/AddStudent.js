@@ -37,7 +37,7 @@ class AddStudent extends Component{
             return <Redirect to="/login"></Redirect>
         }
         return(
-            <div>
+            <div class="container">
                 <h1>Add New Student Details</h1>
                 <form>
                     <div className="form-group">

@@ -4,13 +4,15 @@ import PaymentReducer from './PaymentReducer';
 import ProgressReportReducer from './ProgressReportReducer';
 import StudentReducer from './StudentReducer';
 import CourseReducer from './CourseReducer';
+import MessageReducer from './MessageReducer';
 
 const RootReducer=combineReducers({
     LoginReducer,
     PaymentReducer,
     ProgressReportReducer,
     StudentReducer,
-    CourseReducer
+    CourseReducer,
+    MessageReducer
 });
 
 export default RootReducer;

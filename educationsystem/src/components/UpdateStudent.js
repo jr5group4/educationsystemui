@@ -66,7 +66,7 @@ class UpdateStudent extends Component{
 }
 function mapStateToProps(state) {
     return {
-       editstudent : state.StudentReducer.editstudent,
+       updatestudent : state.StudentReducer.updatestudent,
        login : state.LoginReducer.login
        };
    }
