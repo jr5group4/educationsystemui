@@ -30,7 +30,6 @@ class GetAllCourses extends Component{
                       <th>DURATION</th>
                       <th>START_DATE</th>
                       <th>END_DATE</th>
-                      <th>STUDENT_ID</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -42,11 +41,11 @@ class GetAllCourses extends Component{
                           <td>{course.duration}</td>
                           <td>{course.startDate}</td>
                           <td>{course.endDate}</td> 
-                          {/* <td>{course.student.studentId}</td> */}
+                          {/* <td>{course.student.studentId}</td>  */}
                           <React.Fragment>
                           <td><Link to ={{pathname: '/editcourse',state:{course}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                           <td> <Link to={`/courses/${course.courseId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
-                          <td> <Link to={`/course/${course.courseId}`}> <button className="btn btn-warning">View</button> </Link>  </td>
+                          <td> <Link to={`/course/${course.courseId}`}> <button className="btn btn-info">View</button> </Link>  </td>
                           </React.Fragment>
                       </tr>
                           )}
