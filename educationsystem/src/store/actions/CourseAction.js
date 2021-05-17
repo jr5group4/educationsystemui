@@ -59,6 +59,25 @@ export const getRegisteredCourses = (studentId) => {
     };
 };
 
+export const getOngoingCoursesSuccess = (ongoingcourses) => {
+    console.log("inside getOngoingCoursesSuccess method");
+    return{
+        type : 'GET_ALL_ONGOING_COURSES_SUCCESS',ongoingcourses
+    }
+};
+
+export const getOngoingCourses = (studentId) => {
+    console.log("inside Get All Ongoing Courses method");
+        return (dispatch)=> {
+        return axios.get(COURSEURL+"/getallongoing/"+studentId)
+        .then(Response => {
+            localStorage.setItem("ongoingcourses",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getOngoingCoursesSuccess(Response.data));
+        })
+    };
+};
+
 export const addCourseSuccess=()=>{
     console.log("inside addCourseSuccess method");
     return {

@@ -18,6 +18,7 @@ class GetStudentById extends Component{
         PaymentAction.getPaymentByCode(match.params.studentId)
         this.props.CourseAction.getUpcommingCourses()
         CourseAction.getRegisteredCourses(match.params.studentId)
+        CourseAction.getOngoingCourses(match.params.studentId)
     }
        
     render(){
@@ -28,9 +29,10 @@ class GetStudentById extends Component{
         let payment=this.props.getpayment;
         let stock = this.props.upcommingcourses;
         let courses = this.props.registeredcourses;
+        let oncourses=this.props.ongoingcourses;
         return(
             <div>
-                STUDENT DETAILS
+                <b>STUDENT DETAILS</b>
             <table className="table table-striped" align="center" width="50%" border="2">
                 <tr><th>STUDENT ID</th><td>{student.studentId}</td></tr>
                 <tr><th>FIRST NAME</th><td>{student.firstName}</td></tr>
@@ -39,8 +41,13 @@ class GetStudentById extends Component{
                 <tr><th>EMAIL ID</th><td>{student.studentEmailId}</td></tr>
                 <tr><th>DATE OF BIRTH</th><td>{student.dateOfBirth}</td></tr>
             </table>
-               AVAILABLE COURSES
-            <table className="table table-striped" align="center" width="50%" border="2">
+               <b>AVAILABLE COURSES</b> <br></br>
+               {(Object.entries(stock).length===0)?
+               <React.Fragment>
+                   NO COURSE AVAILABLE <br></br>
+               </React.Fragment>:
+               <React.Fragment>
+                   <table className="table table-striped" align="center" width="50%" border="2">
               <thead>
                   <tr>
                       <th>COURSE_ID</th>
@@ -65,9 +72,16 @@ class GetStudentById extends Component{
                       </tr>
                           )}
                   </tbody>
-              </table> <br></br> 
-               REGISTERED COURSES
-              <table className="table table-striped" align="center" width="50%" border="2">
+              </table> <br></br>
+                </React.Fragment>}
+             
+               <b>REGISTERED COURSES</b> <br></br>
+               {(Object.entries(courses).length===0)?
+               <React.Fragment>
+                   NO COURSE AVAILABLE <br></br>
+               </React.Fragment>:
+               <React.Fragment>
+                   <table className="table table-striped" align="center" width="50%" border="2">
               <thead>
                   <tr>
                       <th>COURSE_ID</th>
@@ -92,9 +106,46 @@ class GetStudentById extends Component{
                       </tr>
                           )}
                   </tbody>
-              </table> <br></br> 
-              PREVIOUS REPORT
-            <table className="table table-striped" align="center" width="50%" border="2">
+              </table> <br></br>
+                </React.Fragment>}
+               
+                <b>ONGOING COURSES</b> <br></br>
+               {(Object.entries(oncourses).length===0)?
+               <React.Fragment>
+                   NO COURSE AVAILABLE <br></br>
+               </React.Fragment>:
+               <React.Fragment>
+                   <table className="table table-striped" align="center" width="50%" border="2">
+              <thead>
+                  <tr>
+                      <th>COURSE_ID</th>
+                      <th>COURSE_NAME</th>
+                      <th>DURATION</th>
+                      <th>START_DATE</th>
+                      <th>END_DATE</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      {
+                          oncourses.map( course=>
+                      <tr key={course.courseId} align="center">
+                          <td>{course.courseId}</td> 
+                          <td>{course.courseName}</td>        
+                          <td>{course.duration}</td>
+                          <td>{course.startDate}</td>
+                          <td>{course.endDate}</td> 
+                      </tr>
+                          )}
+                  </tbody>
+              </table> <br></br>
+                </React.Fragment>}
+
+             <b>PREVIOUS REPORT</b> <br></br>
+             {(Object.entries(preports).length)?
+             <React.Fragment>
+                 <table className="table table-striped" align="center" width="50%" border="2">
+                {preports.map(report=>
+                <tr><th>COURSE NAME</th><td>{report.course.courseName}</td></tr> )}
                 {preports.map(report=>
                 <tr><th>REPORT ID</th><td>{report.progressReportId}</td></tr>
                 )}
@@ -109,8 +160,16 @@ class GetStudentById extends Component{
                 {preports.map(report=>
                 <tr><th>RESULT</th><td>{report.studentResult}</td></tr> )}
             </table>
-            CURRENT REPORT
-            <table className="table table-striped" align="center" width="50%" border="2">
+             </React.Fragment>:
+             <React.Fragment>
+                 NO PREVIOUS REPORT AVAILABLE <br></br>
+            </React.Fragment>}
+             <b>CURRENT REPORT</b> <br></br>
+            {(Object.entries(creports).length)?
+            <React.Fragment>
+                <table className="table table-striped" align="center" width="50%" border="2">
+                {creports.map(report=>
+                <tr><th>COURSE NAME</th><td>{report.course.courseName}</td></tr> )}     
                 {creports.map(report=>
                 <tr><th>REPORT ID</th><td>{report.progressReportId}</td></tr>
                 )}
@@ -125,14 +184,25 @@ class GetStudentById extends Component{
                 {creports.map(report=>
                 <tr><th>RESULT</th><td>{report.studentResult}</td></tr> )}
             </table>
-            PAYMENT DETAILS
-            <table className="table table-striped" align="center" width="50%" border="2">
+            </React.Fragment>:
+            <React.Fragment>
+                NO CURRENT REPORT AVAILABLE <br></br>
+            </React.Fragment>}
+            <b>PAYMENT DETAILS</b> <br></br>
+            {(payment===undefined)?
+            <React.Fragment>
+                NO PAYMENT DETAILS AVAILABLE<br></br>
+            </React.Fragment>:
+            <React.Fragment>
+                <table className="table table-striped" align="center" width="50%" border="2">
+                <tr><th>COURSE NAME</th><td>{payment.course.courseName}</td></tr>
                 <tr><th>PAYMENT ID</th><td>{payment.paymentId}</td></tr>
                 <tr><th>DATE OF PAYMENT</th><td>{payment.paymentDate}</td></tr>
                 <tr><th>LAST DATE OF PAYMENT</th><td>{payment.paymentDue}</td></tr>
                 <tr><th>STATUS</th><td>{payment.feeStatus}</td></tr>
                 <tr><th>AMOUNT</th><td>{payment.feePaid}</td></tr> 
             </table>
+                </React.Fragment>}
             <Link to="/students"><button className="btn btn-info">Back</button></Link>
         </div>
         );
@@ -144,6 +214,7 @@ function mapStateToProps(state) {
         getstudent : state.StudentReducer.getstudent,
         upcommingcourses : state.CourseReducer.upcommingcourses,
         registeredcourses : state.CourseReducer.registeredcourses,
+        ongoingcourses :state.CourseReducer.ongoingcourses,
         previousreports : state.ProgressReportReducer.previousreports,
         currentreports : state.ProgressReportReducer.currentreports,
         getpayment : state.PaymentReducer.getpayment,
