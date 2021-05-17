@@ -37,7 +37,7 @@ function mapStateToProps(state) {
         login : state.LoginReducer.login
        
     };
-}
+} 
 function mapDispatchToProps(dispatch){
      return {
         MessageAction : bindActionCreators(MessageAction, dispatch)

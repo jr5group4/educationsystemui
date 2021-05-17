@@ -5,7 +5,7 @@ const initialState = {
     deletemessage : undefined,
     updatemessage : undefined
 
-}
+} 
 
 export default function MessageReducer(state=initialState,action){
     switch(action.type){

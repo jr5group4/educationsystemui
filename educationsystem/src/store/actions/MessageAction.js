@@ -26,7 +26,7 @@ export const addMessageSuccess=()=>{
     return {
         type : 'MESSAGE_ADDED'
     }
-};
+}; 
 
 export const addMessage = (payload) =>{
     console.log("inside addMessage method");

@@ -28,9 +28,6 @@ class GetAllMessage extends Component{
                       <th>MESSAGE_ID</th>
                       <th>MESSAGE_DESCRIPTION</th>
                       <th>STUDENT_ID</th>
-                      <th>UPDATE</th>
-                      <th>DELETE</th>
-                      <th>VIEW BY ID</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -39,6 +36,7 @@ class GetAllMessage extends Component{
                       <tr key={message.messageId} align="center">
                           <td>{message.messageId}</td>        
                           <td>{message.messageDescription}</td>
+                          <td>{message.studentdetails.studentId}</td>
                           
                           <React.Fragment>
                           <td><Link to ={{pathname: '/updatemessage',state:{message}}}> <button className="btn btn-warning">Update</button> </Link> </td>

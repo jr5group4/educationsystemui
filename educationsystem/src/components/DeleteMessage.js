@@ -15,7 +15,7 @@ class DeleteMessage extends Component{
         return(
             <div></div>
         );
-    }
+    } 
 }
 
 function mapStateToProps(state) {

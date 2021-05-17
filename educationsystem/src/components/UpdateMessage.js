@@ -9,7 +9,8 @@ class UpdateMessage extends Component{
         super(props)
         this.state = {
             messageId : props.location.state.message.messageId,
-            messageDescription : props.location.state.message.messageDescription
+            messageDescription : props.location.state.message.messageDescription,
+            studentId : props.location.state.message.student.studentId
         }
     }
     componentDidMount(){
@@ -49,7 +50,7 @@ class UpdateMessage extends Component{
 				</div>
         );
 
-    }
+    } 
 }
 function mapStateToProps(state) {
     return {
