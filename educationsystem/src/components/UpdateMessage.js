@@ -10,7 +10,7 @@ class UpdateMessage extends Component{
         this.state = {
             messageId : props.location.state.message.messageId,
             messageDescription : props.location.state.message.messageDescription,
-            studentId : props.location.state.message.student.studentId
+            studentId : props.location.state.message.studentDetails.studentId
         }
     }
     componentDidMount(){

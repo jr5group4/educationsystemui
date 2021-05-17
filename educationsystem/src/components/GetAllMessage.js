@@ -36,12 +36,12 @@ class GetAllMessage extends Component{
                       <tr key={message.messageId} align="center">
                           <td>{message.messageId}</td>        
                           <td>{message.messageDescription}</td>
-                          <td>{message.studentdetails.studentId}</td>
+                          <td>{message.studentDetails.studentId}</td> 
                           
                           <React.Fragment>
                           <td><Link to ={{pathname: '/updatemessage',state:{message}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                           <td> <Link to={`/messages/${message.messageId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
-                          <td> <Link to={`/message/${message.messageId}`}> <button className="btn btn-warning">View</button> </Link>  </td>
+                          <td> <Link to={`/message/${message.messageId}`}> <button className="btn btn-info">View</button> </Link>  </td>
                           </React.Fragment>
                       </tr>
                           )}

@@ -47,19 +47,19 @@ export const addMessage = (payload) =>{
     };
 };
 
-export const getMessageByIdSuccess = (message) => {
+export const getMessageByIdSuccess = (getmessage) => {
     console.log("inside getMessageByIdSuccess method");
     return {
-        type : 'GET_MESSAGE_BY_ID_SUCCESS',message
+        type : 'GET_MESSAGE_BY_ID_SUCCESS',getmessage
     }
 };
 
 export const getMessageById = (messageId) => {
     console.log("inside getMessageById method");
     return (dispatch)=> {
-        return axios.get(MESSAGEURL+"/getbyid"+messageId)
+        return axios.get(MESSAGEURL+"/getbyid/"+messageId)
         .then(Response => {
-            localStorage.setItem("message",JSON.stringify(Response.data));
+            localStorage.setItem("getmessage",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getMessageByIdSuccess(Response.data));
         })

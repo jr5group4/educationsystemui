@@ -16,14 +16,13 @@ class GetMessageById extends Component{
     render(){
         
         let message = this.props.getmessage;
-        let newstudent=message.student;
 
         return(
             <div>
             <table className="table table-striped" align="center" width="50%" border="2">
                 <tr><th>MESSAGE ID</th><td>{message.messageId}</td></tr>
-                <tr><th>MESSAGE DESCRIPTioN</th><td>{message.messageDescription}</td></tr>
-                {/*  <tr><th>STUDENT ID</th><td>{newstudent.studentId}</td></tr>  */}
+                <tr><th>MESSAGE DESCRIPTION</th><td>{message.messageDescription}</td></tr>
+                <tr><th>STUDENT ID</th><td>{message.studentDetails.studentId}</td></tr> 
             </table>
             <Link to="/messages"><button className="btn btn-info">Back to User Page</button></Link>
         </div>

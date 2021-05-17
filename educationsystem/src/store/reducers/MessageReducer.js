@@ -1,7 +1,7 @@
 const initialState = {
     messages : [],
     addmessage : undefined,
-    getmessage : undefined,
+    getmessage : [],
     deletemessage : undefined,
     updatemessage : undefined
 
