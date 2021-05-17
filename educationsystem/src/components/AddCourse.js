@@ -52,7 +52,7 @@ class AddCourse extends Component{
                        <label>Enter ending date</label>
                        <input type="date" name="endDate" placeholder="Enter course ending date" className="form-control" value={this.state.endDate} onChange={this.onChange}></input> <br></br>
                        <label>Enter student ID</label>
-                       <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
+                       <input type="text" name="studentId" placeholder="Enter studen Id" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewCourse}>ADD Course</button> &nbsp;&nbsp;
