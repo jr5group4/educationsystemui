@@ -1,7 +1,6 @@
 const initialState = {
     messages : [],
     addmessage : undefined,
-    getmessage : [],
     deletemessage : undefined,
     updatemessage : undefined
 
@@ -18,11 +17,6 @@ export default function MessageReducer(state=initialState,action){
             return {
                 ...state,
                 addmessage : 'added'
-        };
-        case 'GET_MESSAGE_BY_ID_SUCCESS' :
-            return {
-                ...state,
-                getmessage : action.getmessage
         };
         case 'MESSAGE_DELETED' :
             return {

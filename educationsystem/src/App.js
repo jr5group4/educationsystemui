@@ -31,7 +31,6 @@ import AddMessage from './components/AddMessage';
 import GetAllMessage from './components/GetAllMessage';
 import UpdateMessage from './components/UpdateMessage';
 import DeleteMessage from './components/DeleteMessage';
-import GetMessageById from './components/GetMessageById';
 import GetCourseById from './components/GetCourseById';
 import GetTrainerById from './components/GetTrainerById';
 import RegisterCourse from './components/RegisterCourse';
@@ -74,7 +73,6 @@ function App() {
             <Route path="/messages" exact component={GetAllMessage}></Route>
             <Route path="/updatemessage" exact component={UpdateMessage}></Route>
             <Route path="/messages/:messageId" exact component={DeleteMessage}></Route>
-            <Route path="/message/:messageId" exact component={GetMessageById}></Route>
             <Route path="/course/:courseId" exact component={GetCourseById}></Route>
             <Route path="/trainer/:trainerId" exact component={GetTrainerById}></Route>
             <Route path="/register/:courseId/:studentId" exact component={RegisterCourse}></Route>
