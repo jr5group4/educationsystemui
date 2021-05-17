@@ -23,6 +23,7 @@ class GetMessageById extends Component{
                 <tr><th>MESSAGE ID</th><td>{message.messageId}</td></tr>
                 <tr><th>MESSAGE DESCRIPTION</th><td>{message.messageDescription}</td></tr>
                 <tr><th>STUDENT ID</th><td>{message.studentDetails.studentId}</td></tr>  
+                {/* <tr><th>STUDENT ID</th><td>{message.studentDetails.studentId}</td></tr>  */}
             </table>
             <Link to="/messages"><button className="btn btn-info">Back to User Page</button></Link>
         </div>

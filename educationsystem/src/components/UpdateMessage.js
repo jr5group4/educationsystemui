@@ -16,7 +16,7 @@ class UpdateMessage extends Component{
     componentDidMount(){
         console.log(this.props.location.state);
     }
-        UpdateMessage= (e) =>{
+        updateMessage= (e) =>{
             e.preventDefault();
             let payload = {
                 messageId : this.state.messageId,
@@ -25,6 +25,7 @@ class UpdateMessage extends Component{
             }
             console.log(payload.messageId);
             this.props.MessageAction.UpdateMessage(payload);
+            this.props.MessageAction.updateMessage(payload);
             this.props.history.push("/messages");
         }
         onChange = (obj) => {
@@ -45,7 +46,7 @@ class UpdateMessage extends Component{
                        <label>Enter student ID</label>
                        <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                     </div>
-						<button className="btn btn-success" onClick={this.updatePayment}>update message</button>
+						<button className="btn btn-success" onClick={this.updateMessage}>update message</button>
                         <Link to="/messages"> <button className="btn btn-default">Cancel</button></Link> 
 					</form> 
 				</div>
