@@ -23,6 +23,7 @@ class UpdateMessage extends Component{
                 messageDescription : this.state.messageDescription,
                 studentId : this.state.studentId
             }
+            console.log(payload.messageId);
             this.props.MessageAction.UpdateMessage(payload);
             this.props.history.push("/messages");
         }
