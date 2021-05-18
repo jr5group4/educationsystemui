@@ -50,14 +50,14 @@ class GetAllReports extends Component{
                           <td>{report.course.courseId}</td>
                           <td>{report.student.studentId}</td>
                           <React.Fragment>
-                           <td><Link to ={{pathname: '/editreport',state:{report}}}> <button className="btn btn-warning">Update</button> </Link> </td> 
-                           <td> <Link to={`/reports/${report.progressReportId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td> 
+                           <td><Link to ={{pathname: '/editreport',state:{report}}}> <button className="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> </Link> </td> 
+                           <td> <Link to={`/reports/${report.progressReportId}`}> <button className="btn btn-danger"><i class="fa fa-trash"></i></button> </Link>  </td> 
                           </React.Fragment>
                       </tr>
                           )}
                   </tbody>
               </table> <br></br> 
-              <Link to="/admin"><button className="btn btn-info">Back to Admin Page</button></Link>
+              <Link to="/admin"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back to Admin Page</button></Link>
               
           </div>
       );

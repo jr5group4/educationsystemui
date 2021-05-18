@@ -37,7 +37,7 @@ class UpdateMessage extends Component{
             <div>
 			    <h1>Update Message Details </h1>
 				 <form >
-				    <div className="form-group">
+				    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                     <label>Enter Message id </label>
                        <input type="text" name="messageId" className="form-control" value={this.state.messageId} onChange={this.onChange}  readOnly></input><br></br>
                         <label>Enter Message description </label><br></br>

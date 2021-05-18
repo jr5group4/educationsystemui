@@ -44,7 +44,7 @@ class UpdatePayment extends Component{
             <div>
 			    <h1>Update  Payment Details </h1>
 				 <form >
-				    <div className="form-group">
+				    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                     <label>Enter Payment id </label>
                        <input type="text" name="paymentId" className="form-control" value={this.state.paymentId} onChange={this.onChange}  readOnly></input><br></br>
                         <label>Enter date of Payment </label>

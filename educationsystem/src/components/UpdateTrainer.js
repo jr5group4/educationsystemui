@@ -44,7 +44,7 @@ class UpdateTrainer extends Component{
             <div>
 			    <h1>Update Trainer Details </h1>
 				 <form >
-				    <div className="form-group">
+				    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                     <label>Enter Trainer id </label>
                        <input type="text" name="trainerId" className="form-control" value={this.state.trainerId} onChange={this.onChange}  readOnly></input><br></br>
                         <label>Enter name of the Trainer </label>

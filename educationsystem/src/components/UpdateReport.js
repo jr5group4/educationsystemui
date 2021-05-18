@@ -46,7 +46,7 @@ class UpdateReport extends Component{
             <div>
 			    <h1>Update  Progress Report </h1>
 				 <form >
-				    <div className="form-group">
+				    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                     <label>Enter Report id </label>
                        <input type="text" name="progressReportId" className="form-control" value={this.state.progressReportId} onChange={this.onChange}  readOnly></input><br></br>
                        <label>Enter Student's marks </label>

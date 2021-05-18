@@ -50,8 +50,8 @@ class GetAllStudent extends Component{
                             <td>{student.studentEmailId}</td>
                             
                             <React.Fragment>
-                            <td><Link to ={{pathname: '/updatestudent',state:{student}}}> <button className="btn btn-warning">Update</button> </Link> </td>
-                            <td> <Link to={`/students/${student.studentId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
+                            <td><Link to ={{pathname: '/updatestudent',state:{student}}}> <button className="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> </Link> </td>
+                            <td> <Link to={`/students/${student.studentId}`}> <button className="btn btn-danger"><i class="fa fa-trash"></i></button> </Link>  </td>
                             <td> <Link to={`/student/${student.studentId}`}> <button className="btn btn-info" >View</button> </Link>  </td>
                             {/* <button className="btn btn-info" onClick={this.toStudent(student)}>View</button> */}
                             </React.Fragment>
@@ -59,7 +59,7 @@ class GetAllStudent extends Component{
                             )}
                     </tbody>
                 </table> <br></br> 
-                <Link to="/user"><button className="btn btn-info">Back to User Page</button></Link>
+                <Link to="/user"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>
                 
             </div>
         );

@@ -42,7 +42,7 @@ class UpdateStudent extends Component{
             <div>
 			    <h1>Update  Student Details </h1>
 				 <form >
-				    <div className="form-group">
+				    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                     <label>Enter Student id </label>
                        <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}  readOnly></input><br></br>
                         <label>Enter first name </label>

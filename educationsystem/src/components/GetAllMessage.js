@@ -43,17 +43,17 @@ class GetAllMessage extends Component{
                           <td>{message.studentDetails.studentId}</td> 
                           
                           <React.Fragment>
-                          <td><Link to ={{pathname: '/updatemessage',state:{message}}}> <button className="btn btn-warning">Update</button> </Link> </td>
-                          <td> <Link to={`/messages/${message.messageId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
+                          <td><Link to ={{pathname: '/updatemessage',state:{message}}}> <button className="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> </Link> </td>
+                          <td> <Link to={`/messages/${message.messageId}`}> <button className="btn btn-danger"><i class="fa fa-trash"></i></button> </Link>  </td>
                           </React.Fragment>
                       </tr>
                           )}
                   </tbody>
               </table> <br></br>
              { (login.role==="admin")?
-                  <Link to="/admin"><button className="btn btn-info">Back</button></Link>:
+                  <Link to="/admin"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>:
               
-              <Link to="/user"><button className="btn btn-info">Back</button></Link>
+              <Link to="/user"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>
       }
               
           </div>
