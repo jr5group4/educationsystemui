@@ -60,7 +60,7 @@ class AddPayment extends Component{
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewPayment}>ADD Payment</button> &nbsp;&nbsp;
-                       <Link to="/payments"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/user"> <button className="btn btn-default">Cancel</button></Link> 
                    </form>
                </div>
        );

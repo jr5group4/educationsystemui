@@ -4,6 +4,7 @@ import * as MessageAction from '../store/actions/MessageAction';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
  
 class GetAllMessage extends Component{
     componentDidMount(){
@@ -24,7 +25,7 @@ class GetAllMessage extends Component{
       return(
           <div>
               <table className="table table-striped" align="center" width="50%" border="2">
-              <thead>
+              <thead className="thead-dark">
                   <tr>
                       <th>MESSAGE_ID</th>
                       <th>MESSAGE_DESCRIPTION</th>

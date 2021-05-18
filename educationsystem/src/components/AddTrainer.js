@@ -59,7 +59,7 @@ class AddTrainer extends Component{
                        <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewTrainer}>ADD Trainer</button> &nbsp;&nbsp;
-                       <Link to="/trainers"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
                    </form>
                </div>
        );

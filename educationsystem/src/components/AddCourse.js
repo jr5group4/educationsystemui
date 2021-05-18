@@ -56,7 +56,7 @@ class AddCourse extends Component{
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewCourse}>ADD Course</button> &nbsp;&nbsp;
-                       <Link to="/courses"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
                    </form>
                </div>
        );

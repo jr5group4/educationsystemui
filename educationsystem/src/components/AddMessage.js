@@ -43,8 +43,8 @@ class AddMessage extends Component{
                        <input type="text" name="studentId" className="form-control" placeholder="Enter student Id" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        
                    </div>
-                       <button className="btn btn-success" onClick={this.addNewMessage}>Submit</button> &nbsp;&nbsp;
-                       <Link to="/messages"> <button className="btn btn-default">Cancel</button></Link> 
+                       <button className="btn btn-success" onClick={this.addNewMessage}>Submit</button>
+                       <Link to={`/${login.role}`}><button className="btn btn-default">Cancel</button></Link> 
                    </form>
                </div>
        );
@@ -53,7 +53,7 @@ class AddMessage extends Component{
 }
 function mapStateToProps(state) {
     return {
-       addMessage : state.MessageReducer.addmessage,
+       addmessage : state.MessageReducer.addmessage,
        login : state.LoginReducer.login
        };
    } 

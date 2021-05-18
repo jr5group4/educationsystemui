@@ -64,7 +64,7 @@ class AddReport extends Component{
                        
                    </div>
                        <button className="btn btn-success" onClick={this.addNewReport}>ADD Report</button> &nbsp;&nbsp;
-                       <Link to="/reports"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
                    </form>
                </div>
        );

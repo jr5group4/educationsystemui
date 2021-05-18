@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
+import * as StudentAction from '../store/actions/StudentAction';
 import * as PaymentAction from '../store/actions/PaymentAction';
 import {bindActionCreators} from 'redux';
 import {Redirect} from 'react-router-dom';
@@ -11,6 +12,7 @@ class GetPaymentById extends Component{
         PaymentAction.getPaymentByCode(match.params.studentId,match.params.courseId)
     }
     render(){
+        let student = this.props.getstudent;
         let payments=this.props.getpayment;
         return(
             <div>
@@ -34,13 +36,14 @@ class GetPaymentById extends Component{
                 <tr><th>FEE STATUS</th><td>{payment.feeStatus}</td></tr> )}
             </table>
                 </React.Fragment>}
-                <Link to="/students"><button className="btn btn-info">Back</button></Link>
+                <Link to={`/student/${student.studentId}`}><button className="btn btn-info">Back</button></Link>
             </div>
         );
     }
 }
 function mapStateToProps(state) {
     return {
+        getstudent : state.StudentReducer.getstudent,
         getpayment : state.PaymentReducer.getpayment,
         login : state.LoginReducer.login
        
@@ -48,6 +51,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch){
      return {
+        StudentAction : bindActionCreators(StudentAction, dispatch),
         PaymentAction : bindActionCreators(PaymentAction,dispatch)
     };
 }
