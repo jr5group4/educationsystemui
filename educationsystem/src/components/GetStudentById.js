@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as StudentAction from '../store/actions/StudentAction';
-import * as ProgressReportAction from '../store/actions/ProgressReportAction';
-import * as PaymentAction from '../store/actions/PaymentAction';
 import * as CourseAction from '../store/actions/CourseAction';
 import {bindActionCreators} from 'redux';
-import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 
 
 class GetStudentById extends Component{
     componentDidMount(){
-        const {StudentAction,ProgressReportAction,PaymentAction,CourseAction, match} = this.props;
+        const {StudentAction,CourseAction, match} = this.props;
         StudentAction.getStudentById(match.params.studentId)
         this.props.CourseAction.getUpcommingCourses()
         CourseAction.getRegisteredCourses(match.params.studentId)
@@ -51,6 +48,7 @@ class GetStudentById extends Component{
                       <th>DURATION</th>
                       <th>START_DATE</th>
                       <th>END_DATE</th>
+                      <th>REGISTER COURSE</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -85,6 +83,7 @@ class GetStudentById extends Component{
                       <th>DURATION</th>
                       <th>START_DATE</th>
                       <th>END_DATE</th>
+                      <th>REGISTER TRAINER</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -119,6 +118,8 @@ class GetStudentById extends Component{
                       <th>DURATION</th>
                       <th>START_DATE</th>
                       <th>END_DATE</th>
+                      <th>VIEW PAYMENT</th>
+                      <th>VIEW REPORT</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -156,6 +157,8 @@ class GetStudentById extends Component{
                       <th>DURATION</th>
                       <th>START_DATE</th>
                       <th>END_DATE</th>
+                      <th>VIEW PAYMENT</th>
+                      <th>VIEW REPORT</th>
                   </tr>
                   </thead>
                   <tbody>

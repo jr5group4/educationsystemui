@@ -32,6 +32,8 @@ class GetAllPayment extends Component{
                       <th>FEE_STATUS</th>
                       <th>COURSE_ID</th>
                       <th>STUDENT_ID</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
                   </tr>
                   </thead>
                   <tbody>

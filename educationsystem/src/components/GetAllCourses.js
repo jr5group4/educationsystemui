@@ -30,6 +30,9 @@ class GetAllCourses extends Component{
                       <th>DURATION</th>
                       <th>START_DATE</th>
                       <th>END_DATE</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
+                      <th>VIEW</th>
                   </tr>
                   </thead>
                   <tbody>

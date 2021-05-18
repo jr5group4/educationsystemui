@@ -3,7 +3,6 @@ import {connect } from 'react-redux';
 import * as StudentAction from '../store/actions/StudentAction';
 import * as PaymentAction from '../store/actions/PaymentAction';
 import {bindActionCreators} from 'redux';
-import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 class GetPaymentById extends Component{
@@ -17,7 +16,7 @@ class GetPaymentById extends Component{
         return(
             <div>
                 <b>PAYMENT DETAILS</b> <br></br>
-            {(Object.entries(payments).length==0)?
+            {(Object.entries(payments).length===0)?
             <React.Fragment>
                 NO PAYMENT DETAILS AVAILABLE<br></br>
             </React.Fragment>:

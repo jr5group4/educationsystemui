@@ -33,6 +33,9 @@ class GetAllStudent extends Component{
                         <th>DATE_OF_BIRTH</th>
                         <th>PHONE_NUMBER</th>
                         <th>EMAIL_ID</th>
+                        <th>UPDATE</th>
+                        <th>DELETE</th>
+                        <th>VIEW</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -30,6 +30,8 @@ class GetAllMessage extends Component{
                       <th>MESSAGE_ID</th>
                       <th>MESSAGE_DESCRIPTION</th>
                       <th>STUDENT_ID</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
                   </tr>
                   </thead>
                   <tbody>
