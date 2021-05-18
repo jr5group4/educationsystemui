@@ -51,10 +51,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
              } else if(login.role==="user"){
                  return <Redirect to="/user"></Redirect>
              }
-             /*  else {
+             else {
                  alert("Incorrect username/password");
                  window.location.href="/"
-             } */
+             }
          }
          return(
             <div>

@@ -8,7 +8,10 @@ import {Link} from 'react-router-dom';
 class GetAllStudent extends Component{
     componentDidMount(){
         this.props.StudentAction.getStudents()
-    }
+    } 
+    /* toStudent=(student) => {
+        this.props.history.push(`/student/${student.studentId}`);
+    } */
     render(){
         let stock = this.props.students;
         let login = this.props.login;
@@ -18,7 +21,6 @@ class GetAllStudent extends Component{
             alert("unauthorized access.. please login!!!!");
             return <Redirect to="/login"></Redirect>
          }
-
          console.log(login.role);
          return(
             <div>
@@ -47,7 +49,8 @@ class GetAllStudent extends Component{
                             <React.Fragment>
                             <td><Link to ={{pathname: '/updatestudent',state:{student}}}> <button className="btn btn-warning">Update</button> </Link> </td>
                             <td> <Link to={`/students/${student.studentId}`}> <button className="btn btn-danger">Delete</button> </Link>  </td>
-                            <td> <Link to={`/student/${student.studentId}`}> <button className="btn btn-info">View</button> </Link>  </td>
+                            <td> <Link to={`/student/${student.studentId}`}> <button className="btn btn-info" >View</button> </Link>  </td>
+                            {/* <button className="btn btn-info" onClick={this.toStudent(student)}>View</button> */}
                             </React.Fragment>
                         </tr>
                             )}

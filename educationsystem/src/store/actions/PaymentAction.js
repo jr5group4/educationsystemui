@@ -58,10 +58,10 @@ export const getPaymentByCodeSuccess = (getpayment) => {
     }
 };
 
-export const getPaymentByCode = (studentId) => {
+export const getPaymentByCode = (studentId,courseId) => {
     console.log("inside getPaymentByCode method");
     return (dispatch)=> {
-        return axios.get(PAYMENTURL+"/getbyid/"+studentId)
+        return axios.get(PAYMENTURL+"/getbyid/"+studentId+"/"+courseId)
         .then(Response => {
             localStorage.setItem("getpayment",JSON.stringify(Response.data));
             console.log("api call");

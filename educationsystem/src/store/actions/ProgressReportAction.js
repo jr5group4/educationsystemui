@@ -21,43 +21,6 @@ export const getReports = () => {
     };
 };
 
- export const getPreviousReportsSuccess = (previousreports) => {
-    console.log("inside getPreviousReportsSuccess method");
-    return {
-        type : 'GET_PREVIOUS_REPORTS_SUCCESS',previousreports
-    }
-};
-
-export const getPreviousReports = (studentId) => {
-    console.log("inside Get Previous Reports method");
-        return (dispatch)=> {
-        return axios.get(REPORTURL+"/getprevious/"+studentId)
-        .then(Response => {
-            localStorage.setItem("previousreports",JSON.stringify(Response.data));
-            console.log("api call");
-            dispatch(getPreviousReportsSuccess(Response.data));
-        })
-    };
-};
-
-export const getCurrentReportsSuccess = (currentreports) => {
-    console.log("inside getCurrentReportsSuccess method");
-    return {
-        type : 'GET_CURRENT_REPORTS_SUCCESS',currentreports
-    }
-};
-
-export const getCurrentReports = (studentId) => {
-    console.log("inside Get Current Reports method");
-        return (dispatch)=> {
-        return axios.get(REPORTURL+"/getcurrent/"+studentId)
-        .then(Response => {
-            localStorage.setItem("currentreports",JSON.stringify(Response.data));
-            console.log("api call");
-            dispatch(getCurrentReportsSuccess(Response.data));
-        })
-    };
-}; 
 
 export const addReportSuccess=()=>{
     console.log("inside addReportSuccess method");
@@ -139,6 +102,28 @@ export const editReport = (payload) =>{
         })
         .catch(Error=> {
             console.log("Error");
+            throw(Error);
+        });
+    };
+};
+export const getReportByCodeSuccess = (getreport) => {
+    console.log("inside getReportByCodeSuccess method");
+    return {
+        type : 'GET_REPORT_BY_CODE_SUCCESS',getreport
+    }
+};
+
+export const getReportByCode = (studentId,courseId) => {
+    console.log("inside getReportByCode method");
+    return (dispatch)=> {
+        return axios.get(REPORTURL+"/getbyid/"+studentId+"/"+courseId)
+        .then(Response => {
+            localStorage.setItem("getreport",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getReportByCodeSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
             throw(Error);
         });
     };

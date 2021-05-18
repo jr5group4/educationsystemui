@@ -1,7 +1,7 @@
 const initialState = {
     payments : [],
     addpayment : undefined,
-    getpayment : undefined,
+    getpayment : [],
     delpayment : undefined,
     editpayment : undefined
 

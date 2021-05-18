@@ -36,6 +36,8 @@ import GetTrainerById from './components/GetTrainerById';
 import RegisterCourse from './components/RegisterCourse';
 import GetTrainerByCourse from './components/GetTrainerByCourse';
 import RegisterTrainer from './components/RegisterTrainer';
+import GetPaymentById from './components/GetPaymentById';
+import GetReportById from './components/GetReportById';
 
 function App() {
   return (
@@ -78,6 +80,8 @@ function App() {
             <Route path="/register/:courseId/:studentId" exact component={RegisterCourse}></Route>
             <Route path="/trainerbycourse/:courseId" exact component={GetTrainerByCourse}></Route>
             <Route path="/registertrainer/:trainerId/:studentId" exact component={RegisterTrainer}></Route>
+            <Route path="/getpayment/:studentId/:courseId" exact component={GetPaymentById}></Route>
+            <Route path="/getreport/:studentId/:courseId" exact component={GetReportById}></Route>
           </Switch>
         </Router>
     </div>

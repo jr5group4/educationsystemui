@@ -6,6 +6,7 @@ const initialState = {
     delcourse : undefined,
     registercourse : undefined,
     ongoingcourses : [],
+    completedcourses : [],
     registeredcourses : [],
     editcourse : undefined
 
@@ -32,6 +33,11 @@ export default function CourseReducer(state=initialState,action){
             return {
             ...state,
             ongoingcourses : action.ongoingcourses
+        };
+        case 'GET_ALL_COMPLETED_COURSES_SUCCESS':
+            return {
+            ...state,
+            completedcourses : action.completedcourses
         };
         case 'COURSE_ADDED' :
             return {

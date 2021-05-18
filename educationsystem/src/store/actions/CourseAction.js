@@ -78,6 +78,25 @@ export const getOngoingCourses = (studentId) => {
     };
 };
 
+export const getCompletedCoursesSuccess = (completedcourses) => {
+    console.log("inside getCompletedCoursesSuccess method");
+    return{
+        type : 'GET_ALL_COMPLETED_COURSES_SUCCESS',completedcourses
+    }
+};
+
+export const getCompletedCourses = (studentId) => {
+    console.log("inside Get All Completed Courses method");
+        return (dispatch)=> {
+        return axios.get(COURSEURL+"/getallcompleted/"+studentId)
+        .then(Response => {
+            localStorage.setItem("completedcourses",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getCompletedCoursesSuccess(Response.data));
+        })
+    };
+};
+
 export const addCourseSuccess=()=>{
     console.log("inside addCourseSuccess method");
     return {
