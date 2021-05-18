@@ -14,12 +14,45 @@ class AddTrainer extends Component{
             trainerExperience : '',
             trainerEmailId : '',
             //studentId : '',
-            courseId :''
+            courseId :'',
+            errors:{}
         }
         this.addNewTrainer = this.addNewTrainer.bind(this);
     }
+    validate = () =>{
+        let errors= {}
+        let formIsValid = true
+        if(!this.state.trainerName)
+        {
+            formIsValid = false
+            errors['trainerName']='*Please enter trainer name'
+        }
+        if(!this.state.phoneNumber)
+        {
+            formIsValid = false
+            errors['phoneNumber']='*Please enter phone number'
+        }
+        if(!this.state.trainerExperience)
+        {
+            formIsValid = false
+            errors['trainerExperience']='*Please enter trainer experience'
+        }
+        if(!this.state.trainerEmailId)
+        {
+            formIsValid = false
+            errors['trainerEmailId']='*Please enter trainer email Id'
+        }
+        if(!this.state.courseId)
+        {
+            formIsValid = false
+            errors['courseId']='*Please enter course Id'
+        }
+        this.setState({errors})
+        return formIsValid
+    } 
     addNewTrainer = (add) => {
         add.preventDefault();
+        if(this.validate()){
         let payload = {
             trainerName : this.state.trainerName,
             phoneNumber : this.state.phoneNumber,
@@ -31,6 +64,7 @@ class AddTrainer extends Component{
         this.props.TrainerAction.addTrainer(payload);
         this.props.history.push("/trainers");
      }
+    }
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
@@ -47,16 +81,21 @@ class AddTrainer extends Component{
                    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                        <label>Enter name of the trainer </label>
                        <input type="text" name="trainerName" placeholder="Enter name of the trainer" className="form-control" value={this.state.trainerName} onChange={this.onChange}  required="required"></input><br></br>
+                       <div class="red_color">{this.state.errors.trainerName}</div><br></br>
                        <label>Enter phone number of the trainer</label>
                        <input type="text" name="phoneNumber" placeholder="Enter phone number of the trainer" className="form-control" value={this.state.phoneNumber} onChange={this.onChange}></input><br></br>
+                       <div class="red_color">{this.state.errors.phoneNumber}</div><br></br>
                        <label>Enter experience of the trainer</label>
                        <input type="text" name="trainerExperience" placeholder="Enter trainer experience" className="form-control" value={this.state.trainerExperience} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.trainerExperience}</div><br></br>
                        <label>Enter email address of the trainer</label>
                        <input type="text" name="trainerEmailId" placeholder="Enter trainer email-id" className="form-control" value={this.state.trainerEmailId} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.trainerEmailId}</div><br></br>
                        {/* <label>Enter student ID</label>
                        <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br> */}
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.courseId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewTrainer}>ADD Trainer</button> &nbsp;&nbsp;
                        <Link to="/trainers"> <button className="btn btn-default">Cancel</button></Link> 

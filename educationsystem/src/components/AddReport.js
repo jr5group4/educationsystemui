@@ -15,11 +15,54 @@ class AddReport extends Component{
             studentPercentage: '',
             studentResult:'',
             courseId :'',
-            studentId : ''
+            studentId : '',
+            errors:{}
         }
         this.addNewReport = this.addNewReport.bind(this);
     }
+    validate = () =>{
+        let errors= {}
+        let formIsValid = true
+        if(!this.state.studentMarks)
+        {
+            formIsValid = false
+            errors['studentMarks']='*Please enter student marks'
+        }
+        if(!this.state.studentGrade)
+        {
+            formIsValid = false
+            errors['studentGrade']='*Please enter student grade'
+        }
+        if(!this.state.presentForTest)
+        {
+            formIsValid = false
+            errors['presentForTest']='*Please enter present for test'
+        }
+        if(!this.state.studentPercentage)
+        {
+            formIsValid = false
+            errors['studentPercentage']='*Please enter student percentage'
+        }
+        if(!this.state.studentResult)
+        {
+            formIsValid = false
+            errors['studentResult']='*Please enter student result'
+        }
+        if(!this.state.courseId)
+        {
+            formIsValid = false
+            errors['courseId']='*Please enter course Id'
+        }
+        if(!this.state.studentId)
+        {
+            formIsValid = false
+            errors['studentId']='*Please enter student Id'
+        }
+        this.setState({errors})
+        return formIsValid
+    } 
     addNewReport = (add) => {
+        if(this.validate()){
         add.preventDefault();
         let payload = {
             studentMarks : this.state.studentMarks,
@@ -33,6 +76,7 @@ class AddReport extends Component{
         this.props.ProgressReportAction.addReport(payload);
         this.props.history.push("/reports");
      }
+    }
      onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
@@ -49,19 +93,25 @@ class AddReport extends Component{
                    <div className="form-group col-md-4 offset-md-4 offset-md-4">
                        <label>Enter Student's marks </label>
                        <input type="text" name="studentMarks" placeholder="Enter student's marks" className="form-control" value={this.state.studentMarks} onChange={this.onChange}  required="required"></input><br></br>
+                       <div class="red_color">{this.state.errors.studentMarks}</div><br></br>
                        <label>Enter Student's grade</label>
                        <input type="text" name="studentGrade" placeholder="Enter student's grade" className="form-control" value={this.state.studentGrade} onChange={this.onChange}></input><br></br>
+                       <div class="red_color">{this.state.errors.studentGrade}</div><br></br>
                        <label>Attendance(present/absent)</label>
                        <input type="text" name="presentForTest" placeholder="Enter attendence" className="form-control" value={this.state.presentForTest} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.presentForTest}</div><br></br>
                        <label>Enter Student's result</label>
                        <input type="text" name="studentResult" placeholder="Enter students's result" className="form-control" value={this.state.studentResult} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.studentResult}</div><br></br>
                        <label>Enter Student's percentage</label>
                        <input type="text" name="studentPercentage" placeholder="Enter student's percentage" className="form-control" value={this.state.studentPercentage} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.studentPercentage}</div><br></br>
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
+                       <div class="red_color">{this.state.errors.courseId}</div><br></br>
                        <label>Enter student ID</label>
                        <input type="text" name="studentId" placeholder="Enter student Id" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
-                       
+                       <div class="red_color">{this.state.errors.studentId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewReport}>ADD Report</button> &nbsp;&nbsp;
                        <Link to="/reports"> <button className="btn btn-default">Cancel</button></Link> 

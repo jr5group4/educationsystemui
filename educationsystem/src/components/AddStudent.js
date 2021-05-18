@@ -13,12 +13,45 @@ class AddStudent extends Component{
         lastName : '',
         dateOfBirth : '',
         phoneNumber : '',
-        studentEmailId : ''
+        studentEmailId : '',
+        errors:{}
         }
         this.addNewStudent = this.addNewStudent.bind(this);
     }
+    validate = () =>{
+        let errors= {}
+        let formIsValid = true
+        if(!this.state.firstName)
+        {
+            formIsValid = false
+            errors['firstName']='*Please enter first name'
+        }
+        if(!this.state.lastName)
+        {
+            formIsValid = false
+            errors['lastName']='*Please enter last name'
+        }
+        if(!this.state.dateOfBirth)
+        {
+            formIsValid = false
+            errors['dateOfBirth']='*Please enter date of birth'
+        }
+        if(!this.state.phoneNumber)
+        {
+            formIsValid = false
+            errors['phoneNumber']='*Please enter phone number'
+        }
+        if(!this.state.studentEmailId)
+        {
+            formIsValid = false
+            errors['studentEmailId']='*Please enter student email Id'
+        }
+        this.setState({errors})
+        return formIsValid
+    } 
     addNewStudent = (add) => {
         add.preventDefault();
+        if(this.validate()){
         let payload = {
         firstName : this.state.firstName,
         lastName : this.state.lastName,
@@ -29,6 +62,7 @@ class AddStudent extends Component{
         this.props.StudentAction.addStudent(payload);
         this.props.history.push("/students");
     }
+}
     onChange = (obj)=> this.setState({[obj.target.name]:obj.target.value});
     render(){
         let login = this.props.login;
@@ -43,14 +77,19 @@ class AddStudent extends Component{
                     <div className="form-grou col-md-4 offset-md-4 offset-md-4">
                         <label>Enter Firstname</label>
                         <input type="text" name="firstName" placeholder="Enter first name" className="form-control" value={this.state.firstName} onChange={this.onChange} required="required"></input><br></br>
+                        <div class="red_color">{this.state.errors.firstName}</div><br></br>
                         <label>Enter Lastname</label>
                         <input type="text" name="lastName" placeholder="Enter last name" className="form-control" value={this.state.lastName} onChange={this.onChange}></input><br></br>
+                        <div class="red_color">{this.state.errors.lastName}</div><br></br>
                         <label>Enter Date Of Birth</label>
                         <input type="date" name="dateOfBirth" placeholder="Enter date of birth" className="form-control" value={this.state.dateOfBirth} onChange={this.onChange} required="required"></input><br></br>
+                        <div class="red_color">{this.state.errors.dateOfBirth}</div><br></br>
                         <label>Enter Phone number</label>
                         <input type="text" name="phoneNumber" placeholder="Enter phone number" className="form-control" value={this.state.phoneNumber} onChange={this.onChange} required="required"></input><br></br>
+                        <div class="red_color">{this.state.errors.phoneNumber}</div><br></br>
                         <label>Enter Email Id</label>
                         <input type="text" name="studentEmailId" placeholder="Enter email id" className="form-control" value={this.state.studentEmailId} onChange={this.onChange}></input><br></br>   
+                        <div class="red_color">{this.state.errors.studentEmailId}</div><br></br>
                     </div>
                     <button className="btn btn-success" onClick={this.addNewStudent}>Submit</button> &nbsp;&nbsp;
                        <Link to="/students"> <button className="btn btn-default">Cancel</button></Link> 
