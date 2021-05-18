@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as TrainerAction from '../store/actions/TrainerAction';
 import {bindActionCreators} from 'redux';
-import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 class GetTrainerByCourse extends Component{

@@ -31,6 +31,9 @@ class GetAllTrainers extends Component{
                       <th>TRAINER_EXPERIENCE</th>
                       <th>TRAINER_EMAIL_ID</th>
                       <th>COURSE_ID</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
+                      <th>VIEW</th>
                   </tr>
                   </thead>
                   <tbody>

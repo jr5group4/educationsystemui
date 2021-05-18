@@ -33,6 +33,8 @@ class GetAllReports extends Component{
                       <th>RESULT</th>
                       <th>COURSE_ID</th>
                       <th>STUDENT_ID</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
                   </tr>
                   </thead>
                   <tbody>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as TrainerAction from '../store/actions/TrainerAction';
 import {bindActionCreators} from 'redux';
-import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 
@@ -16,7 +15,6 @@ class GetTrainerById extends Component{
     render(){
         
         let trainer = this.props.gettrainer;
-        let newcourse=trainer.course;
         return(
             <div>
             <table className="table table-striped" align="center" width="50%" border="2">

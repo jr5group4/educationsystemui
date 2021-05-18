@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as StudentAction from '../store/actions/StudentAction';
 import * as ProgressReportAction from '../store/actions/ProgressReportAction';
-import {bindActionCreators, compose} from 'redux';
-import {Redirect} from 'react-router-dom';
+import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 
 class GetReportById extends Component{
@@ -17,7 +16,7 @@ class GetReportById extends Component{
         return(
             <div>
                <b>PAYMENT DETAILS</b> <br></br>
-            {(Object.entries(report).length==0)?
+            {(Object.entries(report).length===0)?
             <React.Fragment>
                 NO PROGRESS REPORT AVAILABLE<br></br>
             </React.Fragment>:
