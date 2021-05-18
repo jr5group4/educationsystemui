@@ -17,6 +17,7 @@ class GetAllMessage extends Component{
         if(login===undefined){
          alert("unauthorized access.. please login!!!!");
          return <Redirect to="/login"></Redirect>
+    
       }
 
       console.log(login.role);
@@ -45,8 +46,12 @@ class GetAllMessage extends Component{
                       </tr>
                           )}
                   </tbody>
-              </table> <br></br> 
+              </table> <br></br>
+             { (login.role==="admin")?
+                  <Link to="/admin"><button className="btn btn-info">Back</button></Link>:
+              
               <Link to="/user"><button className="btn btn-info">Back</button></Link>
+      }
               
           </div>
       );

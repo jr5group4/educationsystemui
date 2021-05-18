@@ -11,11 +11,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
          this.state={
              userId:'',
              userPassword:'',
-             role:''
-            //  erros:{}
+             role:'',
+             errors:{}
          }
      }
-    /*  validate = () =>{
+     validate = () =>{
          let errors= {}
          let formIsValid = true
          if(!this.state.userId)
@@ -23,18 +23,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
              formIsValid = false
              errors['userId']='*Please enter username'
          }
+         if(!this.state.userPassword)
+         {
+             formIsValid = false
+             errors['userPassword']='*Please enter password'
+         }
+         if(!this.state.role)
+         {
+             formIsValid = false
+             errors['role']='*Please enter role'
+         }
          this.setState({errors})
          return formIsValid
-     } */
+     } 
 
       validation=(usr)=>{
+        usr.preventDefault();
+        if(this.validate()){
          let payload={
              userId:this.state.userId,
              userPassword:this.state.userPassword,
              role:this.state.role
          }
          this.props.LoginAction.loginValidate(payload);
-         usr.preventDefault();
+       
+        }   
      } 
      onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
 
@@ -68,14 +81,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                     
                     <label>Username</label>
                     <input type="text" name="userId" placeholder="Enter Username" className="form-control" value={this.state.userId} onChange={this.onChange} required/><br></br>
+                    <div class="red_color">{this.state.errors.userId}</div><br></br>
                     <label>Enter password</label>
                <input type="password" name="userPassword" placeholder="Enter Password" className="form-control" value={this.state.userPassword} onChange={this.onChange} required></input><br></br>
+               <div class="red_color">{this.state.errors.userPassword}</div><br></br>
                <label>Role</label>
                          <input type="text" name="role" placeholder="Enter role" className="form-control" value={this.state.role} onChange={this.onChange} required></input><br></br>
-                     
+                         <div class="red_color">{this.state.errors.role}</div><br></br>
                 </div>
-                     <button className="btn btn-success mt-1 mb-4" onClick={this.validation}>Login</button>
-                     <button className="btn btn-info mt-1 mb-4" id="bt" onClick={this.signup}>Sign Up</button>
+                     <button className="btn btn-success mt-1 mb-4 btn_size " onClick={this.validation}>Login</button>
+                     <button className="btn btn-info mt-1 mb-4 btn_space btn_size" id="bt" onClick={this.signup}>Sign Up</button>
                      </form>
             </div></div>
             </div>
