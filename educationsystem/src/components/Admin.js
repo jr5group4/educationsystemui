@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import {Link} from 'react-router-dom';
+import './User.css';
 
 
 class Admin extends Component{
@@ -30,7 +31,9 @@ class Admin extends Component{
                     <button className="btn btn-info">Add Trainer</button>
                 </Link> &nbsp;
                 <button className="btn btn-danger" id="bt" onClick={this.logout}>Logout</button>
+            <div className="admin"></div>
             </div>
+
         );
     }
 }

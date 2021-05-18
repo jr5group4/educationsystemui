@@ -1,0 +1,12 @@
+.user {
+    background-size: cover;
+  height: 80vh;
+  margin-top: 10px;
+  background-image: url(https://edsurge.imgix.net/uploads/post/image/13610/diverse_students_for_workforce-1597255295.jpg?auto=compress%2Cformat&w=1400&h=567&fit=crop);
+}
+.admin {
+  background-size: cover;
+  height: 80vh;
+  margin-top: 10px;
+  background-image: url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29sbGVnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
+}

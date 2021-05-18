@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
+import './User.css';
 
 class User extends Component{
     logout(){
@@ -14,7 +15,7 @@ class User extends Component{
             return <Redirect to="/login"></Redirect>
          }
         return(
-            <div>
+            <div >
                 <h1>Welcome {this.props.login.userId}</h1>
                 <Link to="/payments">
                     <button className="btn btn-info">View All Payments</button>
@@ -43,6 +44,7 @@ class User extends Component{
                     <button className="btn btn-info">View All Trainers</button>
                 </Link> &nbsp;
                 <button className="btn btn-danger" id="bt" onClick={this.logout}>Logout</button>
+           <div className="user"> </div>
             </div>
         );
     }
