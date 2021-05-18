@@ -92,7 +92,7 @@ class AddStudent extends Component{
                         <div class="red_color">{this.state.errors.studentEmailId}</div><br></br>
                     </div>
                     <button className="btn btn-success" onClick={this.addNewStudent}>Submit</button> &nbsp;&nbsp;
-                       <Link to="/students"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/user"> <button className="btn btn-default">Cancel</button></Link> 
                 </form>
             </div>
         );

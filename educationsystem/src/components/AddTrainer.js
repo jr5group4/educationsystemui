@@ -98,7 +98,7 @@ class AddTrainer extends Component{
                        <div class="red_color">{this.state.errors.courseId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewTrainer}>ADD Trainer</button> &nbsp;&nbsp;
-                       <Link to="/trainers"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
                    </form>
                </div>
        );

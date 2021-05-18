@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
+import * as StudentAction from '../store/actions/StudentAction';
 import * as ProgressReportAction from '../store/actions/ProgressReportAction';
 import {bindActionCreators, compose} from 'redux';
 import {Redirect} from 'react-router-dom';
@@ -11,6 +12,7 @@ class GetReportById extends Component{
         ProgressReportAction.getReportByCode(match.params.studentId,match.params.courseId)
     }
     render(){
+        let student = this.props.getstudent;
         let report =this.props.getreport;
         return(
             <div>
@@ -29,7 +31,7 @@ class GetReportById extends Component{
                 <tr><th>RESULT</th><td>{report.studentResult}</td></tr>
             </table>
             </React.Fragment>}
-            <Link to="/students"><button className="btn btn-info">Back</button></Link>
+            <Link to={`/student/${student.studentId}`}><button className="btn btn-info">Back</button></Link>
             </div>
         );
     }
@@ -37,6 +39,7 @@ class GetReportById extends Component{
 
 function mapStateToProps(state) {
     return {
+        getstudent : state.StudentReducer.getstudent,
         getreport : state.ProgressReportReducer.getreport,
         login : state.LoginReducer.login
        
@@ -44,6 +47,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch){
      return {
+        StudentAction : bindActionCreators(StudentAction, dispatch),
         ProgressReportAction : bindActionCreators(ProgressReportAction,dispatch)
     };
 }
