@@ -40,7 +40,7 @@ class GetTrainerByCourse extends Component{
                           )}
                   </tbody>
               </table> <br></br> 
-             <Link to="/student/:studentId"><button className="btn btn-info">Back</button></Link> 
+             <Link to={`/student/${student.studentId}`}><button className="btn btn-info">Back</button></Link> 
             </div>
         );
     }

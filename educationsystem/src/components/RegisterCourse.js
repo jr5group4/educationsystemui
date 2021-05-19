@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
+import * as StudentAction from '../store/actions/StudentAction';
 import * as CourseAction from '../store/actions/CourseAction';
 import {bindActionCreators} from 'redux';
 
@@ -9,8 +10,9 @@ class RegisterCourse extends Component{
         CourseAction.registerCourse(match.params.courseId,match.params.studentId);
     }
     render(){
+        let student = this.props.getstudent;
         if(this.props.registercourse !== undefined){
-            this.props.history.push("/students");
+            this.props.history.push(`/student/${student.studentId}`);
         }
         return(
             <div></div>
@@ -19,12 +21,14 @@ class RegisterCourse extends Component{
 }
 function mapStateToProps(state) {
     return {
+        getstudent : state.StudentReducer.getstudent,
         registercourse : state.CourseReducer.registercourse
        
     };
 }
 function mapDispatchToProps(dispatch){
      return {
+        StudentAction : bindActionCreators(StudentAction, dispatch),
         CourseAction : bindActionCreators(CourseAction, dispatch)
     };
 }

@@ -23,31 +23,6 @@ class AddReport extends Component{
     validate = () =>{
         let errors= {}
         let formIsValid = true
-        if(!this.state.studentMarks)
-        {
-            formIsValid = false
-            errors['studentMarks']='*Please enter student marks'
-        }
-        if(!this.state.studentGrade)
-        {
-            formIsValid = false
-            errors['studentGrade']='*Please enter student grade'
-        }
-        if(!this.state.presentForTest)
-        {
-            formIsValid = false
-            errors['presentForTest']='*Please enter present for test'
-        }
-        if(!this.state.studentPercentage)
-        {
-            formIsValid = false
-            errors['studentPercentage']='*Please enter student percentage'
-        }
-        if(!this.state.studentResult)
-        {
-            formIsValid = false
-            errors['studentResult']='*Please enter student result'
-        }
         if(!this.state.courseId)
         {
             formIsValid = false
