@@ -46,6 +46,11 @@ class AddStudent extends Component{
             formIsValid = false
             errors['studentEmailId']='*Please enter student email Id'
         }
+        else if(!/\S+@\S+\.\S+/.test(this.state.studentEmailId))
+        {
+            formIsValid = false
+            errors['studentEmailId']='*Please enter valid email Id'
+        }
         this.setState({errors})
         return formIsValid
     } 
@@ -91,8 +96,8 @@ class AddStudent extends Component{
                         <input type="text" name="studentEmailId" placeholder="Enter email id" className="form-control" value={this.state.studentEmailId} onChange={this.onChange}></input><br></br>   
                         <div class="red_color">{this.state.errors.studentEmailId}</div><br></br>
                     </div>
-                    <button className="btn btn-success" onClick={this.addNewStudent}>Submit</button> &nbsp;&nbsp;
-                       <Link to="/user"> <button className="btn btn-default">Cancel</button></Link> 
+                    <button className="btn btn-success btn_size btn_size" onClick={this.addNewStudent}>Submit</button> &nbsp;&nbsp;
+                       <Link to="/user"> <button className="btn btn-outline-secondary btn_space btn_size btn_size">Cancel</button></Link> 
                 </form>
             </div>
         );

@@ -40,6 +40,16 @@ class AddTrainer extends Component{
             formIsValid = false
             errors['trainerEmailId']='*Please enter trainer email Id'
         }
+        else if(!/\S+@\S+\.\S+/.test(this.state.trainerEmailId))
+        {
+            formIsValid = false
+            errors['trainerEmailId']='*Please enter valid email Id'
+        }
+        /* if(!this.state.courseId)
+        {
+            formIsValid = false
+            errors['courseId']='*Please enter course Id'
+        } */
         this.setState({errors})
         return formIsValid
     } 
@@ -87,7 +97,7 @@ class AddTrainer extends Component{
                       
                    </div>
                        <button className="btn btn-success" onClick={this.addNewTrainer}>ADD Trainer</button> &nbsp;&nbsp;
-                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 
                    </form>
                </div>
        );

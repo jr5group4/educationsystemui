@@ -53,7 +53,11 @@ class GetAllTrainers extends Component{
                           )}
                   </tbody>
               </table> <br></br> 
-              <Link to="/user"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back to User Page</button></Link>
+              { (login.role==="admin")?
+                  <Link to="/admin"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>:
+              
+              <Link to="/user"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>
+      }
               
           </div>
       );

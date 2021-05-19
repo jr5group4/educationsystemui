@@ -26,7 +26,7 @@ class GetCourseById extends Component{
                 <tr><th>END DATE</th><td>{course.endDate}</td></tr>
                 {/*  <tr><th>STUDENT ID</th><td>{newstudent.studentId}</td></tr>  */}
             </table>
-            <Link to="/courses"><button className="btn btn-info">Back to User Page</button></Link>
+            <Link to="/courses"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back to User Page</button></Link>
         </div>
         );
         

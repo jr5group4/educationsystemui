@@ -70,13 +70,32 @@ class AddReport extends Component{
                        <input type="text" name="studentMarks" placeholder="Enter student's marks" className="form-control" value={this.state.studentMarks} onChange={this.onChange}  required="required"></input><br></br>
                        <div class="red_color">{this.state.errors.studentMarks}</div><br></br>
                        <label>Enter Student's grade</label>
-                       <input type="text" name="studentGrade" placeholder="Enter student's grade" className="form-control" value={this.state.studentGrade} onChange={this.onChange}></input><br></br>
+                       <input list="grades" name="studentGrade" placeholder="Enter student's grade" className="form-control" value={this.state.studentGrade} onChange={this.onChange}></input><br></br>
+                       <datalist id="grades">
+                         <option value="A"></option>
+                         <option value="B"></option>
+                         <option value="C"></option>
+                         <option value="D"></option>
+                         <option value="E"></option>
+                         <option value="F"></option>
+                         <option value="NA"></option>
+                        </datalist>
                        <div class="red_color">{this.state.errors.studentGrade}</div><br></br>
                        <label>Attendance(present/absent)</label>
-                       <input type="text" name="presentForTest" placeholder="Enter attendence" className="form-control" value={this.state.presentForTest} onChange={this.onChange}></input> <br></br>
+                       <input list="status" name="presentForTest" placeholder="Enter attendence" className="form-control" value={this.state.presentForTest} onChange={this.onChange}></input> <br></br>
+                       <datalist id="status">
+                            <option value="Present"></option>
+                            <option value="Absent"></option>
+                            <option value="NA"></option>
+                       </datalist>
                        <div class="red_color">{this.state.errors.presentForTest}</div><br></br>
                        <label>Enter Student's result</label>
-                       <input type="text" name="studentResult" placeholder="Enter students's result" className="form-control" value={this.state.studentResult} onChange={this.onChange}></input> <br></br>
+                       <input list="results" name="studentResult" placeholder="Enter students's result" className="form-control" value={this.state.studentResult} onChange={this.onChange}></input> <br></br>
+                       <datalist id="results">
+                            <option value="Pass"></option>
+                            <option value="Fail"></option>
+                            <option value="NA"></option>
+                       </datalist>
                        <div class="red_color">{this.state.errors.studentResult}</div><br></br>
                        <label>Enter Student's percentage</label>
                        <input type="text" name="studentPercentage" placeholder="Enter student's percentage" className="form-control" value={this.state.studentPercentage} onChange={this.onChange}></input> <br></br>
@@ -89,7 +108,7 @@ class AddReport extends Component{
                        <div class="red_color">{this.state.errors.studentId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewReport}>ADD Report</button> &nbsp;&nbsp;
-                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 
                    </form>
                </div>
        );

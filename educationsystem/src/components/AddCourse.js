@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as CourseAction from '../store/actions/CourseAction';
+import * as TrainerAction from '../store/actions/TrainerAction';
 import {bindActionCreators} from 'redux';
 import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 class AddCourse extends Component{
+    componentDidMount(){
+        this.props.TrainerAction.getAvailableTrainers()
+      }
     constructor(props){
         super(props)
         this.state = {
@@ -67,6 +71,7 @@ class AddCourse extends Component{
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
+        let stock = this.props.availabletrainers;
         let login = this.props.login;
        if(login===undefined){
            alert("unauthorized access.. please login!!!!");
@@ -90,11 +95,17 @@ class AddCourse extends Component{
                        <input type="date" name="endDate" placeholder="Enter course ending date" className="form-control" value={this.state.endDate} onChange={this.onChange}></input> <br></br>
                        <div class="red_color">{this.state.errors.endDate}</div><br></br>
                        <label>Enter Trainer Id</label>
-                       <input type="text" name="trainerId" placeholder="Enter trainer id" className="form-control" value={this.state.trainerId} onChange={this.onChange}></input> <br></br>
-                       <div class="red_color">{this.state.errors.trainerId}</div><br></br>
+                       <input  list="options" name="trainerId" placeholder="Enter trainer id" className="form-control" value={this.state.trainerId} onChange={this.onChange}></input> <br></br>
+                       <datalist id="options">
+                           {
+                           stock.map(trainer=><option value={trainer.trainerId}></option>)
+                           }
+                            
+                       </datalist>
+                       {/* <div class="red_color">{this.state.errors.trainerId}</div><br></br> */}
                    </div>
                        <button className="btn btn-success" onClick={this.addNewCourse}>ADD Course</button> &nbsp;&nbsp;
-                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/user"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 
                    </form>
                </div>
        );
@@ -103,13 +114,15 @@ class AddCourse extends Component{
 }
 function mapStateToProps(state) {
     return {
+        availabletrainers : state.TrainerReducer.availabletrainers,
        addcourse : state.CourseReducer.addcourse,
        login : state.LoginReducer.login
        };
    }
    function mapDispatchToProps(dispatch){
     return {
-     CourseAction : bindActionCreators(CourseAction, dispatch)
+     CourseAction : bindActionCreators(CourseAction, dispatch),
+     TrainerAction : bindActionCreators(TrainerAction, dispatch)
       };
    }
    
