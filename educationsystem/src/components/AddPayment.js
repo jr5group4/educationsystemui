@@ -22,11 +22,6 @@ class AddPayment extends Component{
     validate = () =>{
         let errors= {}
         let formIsValid = true
-        if(!this.state.paymentDate)
-        {
-            formIsValid = false
-            errors['paymentDate']='*Please enter payment date'
-        }
         if(!this.state.paymentDue)
         {
             formIsValid = false

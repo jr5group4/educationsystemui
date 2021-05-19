@@ -13,7 +13,6 @@ class AddCourse extends Component{
             duration : '',
             startDate : '',
             endDate : '',
-            studentId :'',
             errors:{}
         }
         this.addNewCourse = this.addNewCourse.bind(this);
@@ -41,11 +40,6 @@ class AddCourse extends Component{
             formIsValid = false
             errors['endDate']='*Please enter end date'
         }
-        if(!this.state.studentId)
-        {
-            formIsValid = false
-            errors['studentId']='*Please enter student Id'
-        }
         this.setState({errors})
         return formIsValid
     } 
@@ -56,8 +50,7 @@ class AddCourse extends Component{
             courseName : this.state.courseName,
             duration : this.state.duration,
             startDate : this.state.startDate,
-            endDate : this.state.endDate,
-            studentId : this.state.studentId
+            endDate : this.state.endDate
         }
         this.props.CourseAction.addCourse(payload);
         this.props.history.push("/courses");
@@ -89,9 +82,6 @@ class AddCourse extends Component{
                        <label>Enter ending date</label>
                        <input type="date" name="endDate" placeholder="Enter course ending date" className="form-control" value={this.state.endDate} onChange={this.onChange}></input> <br></br>
                        <div class="red_color">{this.state.errors.endDate}</div><br></br>
-                       <label>Enter student ID</label>
-                       <input type="text" name="studentId" placeholder="Enter studen Id" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
-                       <div class="red_color">{this.state.errors.studentId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewCourse}>ADD Course</button> &nbsp;&nbsp;
                        <Link to="/admin"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 

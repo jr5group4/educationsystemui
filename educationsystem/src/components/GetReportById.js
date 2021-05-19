@@ -15,7 +15,7 @@ class GetReportById extends Component{
         let report =this.props.getreport;
         return(
             <div>
-               <b>PAYMENT DETAILS</b> <br></br>
+               <b>PROGRESS REPORT</b> <br></br>
             {(Object.entries(report).length===0)?
             <React.Fragment>
                 NO PROGRESS REPORT AVAILABLE<br></br>

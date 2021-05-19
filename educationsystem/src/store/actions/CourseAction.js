@@ -110,8 +110,7 @@ export const addCourse = (payload) =>{
         courseName : payload.courseName,
         duration : payload.duration,
         startDate  : payload.startDate,
-        endDate : payload.endDate,
-        studentId : payload.studentId
+        endDate : payload.endDate
     }
     return (dispatch)=> {
         return axios.post(COURSEURL+"/add",item)
