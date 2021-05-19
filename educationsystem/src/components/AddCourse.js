@@ -50,6 +50,11 @@ class AddCourse extends Component{
             formIsValid = false
             errors['trainerId']='*Please enter trainer id'
         }
+        if(this.state.startDate>this.state.endDate)
+        {
+            formIsValid = false
+            errors['endDate']='*End date should always be greater than start date'
+        }
         this.setState({errors})
         return formIsValid
     } 
