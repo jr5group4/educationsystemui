@@ -132,7 +132,7 @@ class GetStudentById extends Component{
                           <td>{course.startDate}</td>
                           <td>{course.endDate}</td> 
                           <React.Fragment>
-                           <td> <Link to={`/getpayment/${student.studentId}/${course.courseId}`}> <button className="btn btn-info">View Payment</button> </Link>  </td> 
+                           <td> <Link to={{pathname:`/getpayment/${student.studentId}/${course.courseId}`}}> <button className="btn btn-info">View Payment</button> </Link>  </td> 
                           </React.Fragment>
                           <React.Fragment>
                            <td> <Link to={`/getreport/${student.studentId}/${course.courseId}`}> <button className="btn btn-info">View Progress Report</button> </Link>  </td> 

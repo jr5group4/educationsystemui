@@ -13,8 +13,6 @@ class AddTrainer extends Component{
             phoneNumber : '',
             trainerExperience : '',
             trainerEmailId : '',
-            //studentId : '',
-            courseId :'',
             errors:{}
         }
         this.addNewTrainer = this.addNewTrainer.bind(this);
@@ -57,11 +55,11 @@ class AddTrainer extends Component{
             formIsValid = false
             errors['trainerEmailId']='*Please enter valid email Id'
         }
-        if(!this.state.courseId)
+        /* if(!this.state.courseId)
         {
             formIsValid = false
             errors['courseId']='*Please enter course Id'
-        }
+        } */
         this.setState({errors})
         return formIsValid
     } 
@@ -72,9 +70,7 @@ class AddTrainer extends Component{
             trainerName : this.state.trainerName,
             phoneNumber : this.state.phoneNumber,
             trainerExperience : this.state.trainerExperience,
-            trainerEmailId : this.state.trainerEmailId,
-            //studentId : this.state.studentId,
-            courseId : this.state.courseId
+            trainerEmailId : this.state.trainerEmailId
         }
         this.props.TrainerAction.addTrainer(payload);
         this.props.history.push("/trainers");
@@ -108,9 +104,7 @@ class AddTrainer extends Component{
                        <div class="red_color">{this.state.errors.trainerEmailId}</div><br></br>
                        {/* <label>Enter student ID</label>
                        <input type="text" name="studentId" className="form-control" value={this.state.studentId} onChange={this.onChange}></input> <br></br> */}
-                       <label>Enter course ID</label>
-                       <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
-                       <div class="red_color">{this.state.errors.courseId}</div><br></br>
+                      
                    </div>
                        <button className="btn btn-success" onClick={this.addNewTrainer}>ADD Trainer</button> &nbsp;&nbsp;
                        <Link to="/admin"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 

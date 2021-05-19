@@ -86,6 +86,7 @@ class AddReport extends Component{
                        <datalist id="status">
                             <option value="Present"></option>
                             <option value="Absent"></option>
+                            <option value="NA"></option>
                        </datalist>
                        <div class="red_color">{this.state.errors.presentForTest}</div><br></br>
                        <label>Enter Student's result</label>
@@ -93,6 +94,7 @@ class AddReport extends Component{
                        <datalist id="results">
                             <option value="Pass"></option>
                             <option value="Fail"></option>
+                            <option value="NA"></option>
                        </datalist>
                        <div class="red_color">{this.state.errors.studentResult}</div><br></br>
                        <label>Enter Student's percentage</label>

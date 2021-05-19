@@ -30,7 +30,6 @@ class GetAllTrainers extends Component{
                       <th>PHONE_NUMBER</th>
                       <th>TRAINER_EXPERIENCE</th>
                       <th>TRAINER_EMAIL_ID</th>
-                      <th>COURSE_ID</th>
                       <th>UPDATE</th>
                       <th>DELETE</th>
                       <th>VIEW</th>
@@ -45,7 +44,6 @@ class GetAllTrainers extends Component{
                           <td>{trainer.phoneNumber}</td>
                           <td>{trainer.trainerExperience}</td> 
                           <td>{trainer.trainerEmailId}</td>
-                          <td>{trainer.course.courseId}</td>
                           <React.Fragment>
                           <td><Link to ={{pathname: '/edittrainer',state:{trainer}}}> <button className="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> </Link> </td>
                           <td> <Link to={`/trainers/${trainer.trainerId}`}> <button className="btn btn-danger"><i class="fa fa-trash"></i></button> </Link>  </td>
