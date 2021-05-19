@@ -89,7 +89,11 @@ class AddPayment extends Component{
                        <input type="text" name="feePaid" placeholder="Enter course fees" className="form-control" value={this.state.feePaid} onChange={this.onChange}></input> <br></br>
                        <div class="red_color">{this.state.errors.feePaid}</div><br></br>
                        <label>Enter fee status(paid/unpaid)</label>
-                       <input type="text" name="feeStatus" placeholder="Enter fee status" className="form-control" value={this.state.feeStatus} onChange={this.onChange}></input> <br></br>
+                       <input list="options" name="feeStatus" placeholder="Enter fee status" className="form-control" value={this.state.feeStatus} onChange={this.onChange}></input> <br></br>
+                       <datalist id="options">
+                            <option value="Paid"></option>
+                            <option value="Not Paid"></option>
+                       </datalist>
                        <div class="red_color">{this.state.errors.feeStatus}</div><br></br>
                        <label>Enter course ID</label>
                        <input type="text" name="courseId" placeholder="Enter course Id" className="form-control" value={this.state.courseId} onChange={this.onChange}></input> <br></br>
