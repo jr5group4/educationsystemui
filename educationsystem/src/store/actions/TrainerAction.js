@@ -122,27 +122,33 @@ export const editTrainer = (payload) =>{
     };
 };
 
- export const getTrainerByCourseSuccess = (gettrainercourse) => {
-    console.log("inside getTrainerByCourseSuccess method");
+export const deleteTrainerSuccess=()=>{
+    console.log("inside deleteTrainerSuccess method");
     return {
-        type : 'GET_TRAINER_BY_COURSE_SUCCESS',gettrainercourse
+        type : 'TRAINER_DELETED'
     }
 };
 
-export const getTrainerByCourse = (courseId) => {
-    console.log("inside getTrainerByCourse method");
+export const deleteTrainer = (trainerId) =>{
+    console.log("inside deleteTrainer method");
     return (dispatch)=> {
-        return axios.get(TRAINERURL+"/getbycourse/"+courseId)
+        return axios.delete(TRAINERURL+"/delete/"+trainerId)
         .then(Response => {
-            localStorage.setItem("gettrainercourse",JSON.stringify(Response.data));
             console.log("api call");
-            dispatch(getTrainerByCourseSuccess(Response.data));
+            dispatch(deleteTrainerSuccess());
         })
-        .catch(Error =>{
-            console.log("error");
+        .catch(Error=> {
+            console.log("Error");
             throw(Error);
         });
     };
+};
+
+export const editPaymentSuccess=()=>{
+    console.log("inside editPaymentSuccess method");
+    return {
+        type : 'PAYMENT_EDITED'
+    }
 }; 
 
 export const registerTrainerSuccess=()=>{

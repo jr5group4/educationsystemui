@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 class AddCourse extends Component{
     componentDidMount(){
         this.props.TrainerAction.getAvailableTrainers()
-      }
+    }
     constructor(props){
         super(props)
         this.state = {
