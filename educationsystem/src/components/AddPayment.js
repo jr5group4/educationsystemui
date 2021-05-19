@@ -104,7 +104,7 @@ class AddPayment extends Component{
                        <div class="red_color">{this.state.errors.studentId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewPayment}>ADD Payment</button> &nbsp;&nbsp;
-                       <Link to="/user"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/user"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 
                    </form>
                </div>
        );

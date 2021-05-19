@@ -63,8 +63,8 @@ class AddMessage extends Component{
                        <input type="text" name="studentId" className="form-control" placeholder="Enter student Id" value={this.state.studentId} onChange={this.onChange}></input> <br></br>
                        <div class="red_color">{this.state.errors.studentId}</div><br></br>
                    </div>
-                       <button className="btn btn-success" onClick={this.addNewMessage}>Submit</button>
-                       <Link to={`/${login.role}`}><button className="btn btn-default">Cancel</button></Link> 
+                       <button className="btn btn-success btn_size" onClick={this.addNewMessage}>Submit</button>
+                       <Link to={`/${login.role}`}><button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 
                    </form>
                </div>
        );

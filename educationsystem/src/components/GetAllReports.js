@@ -57,7 +57,7 @@ class GetAllReports extends Component{
                           )}
                   </tbody>
               </table> <br></br> 
-              <Link to="/admin"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back to Admin Page</button></Link>
+              <Link to="/admin"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>
               
           </div>
       );

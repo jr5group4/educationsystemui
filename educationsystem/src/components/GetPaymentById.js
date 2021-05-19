@@ -35,7 +35,7 @@ class GetPaymentById extends Component{
                 <tr><th>FEE STATUS</th><td>{payment.feeStatus}</td></tr> )}
             </table>
                 </React.Fragment>}
-                <Link to={`/student/${student.studentId}`}><button className="btn btn-info">Back</button></Link>
+                <Link to={`/student/${student.studentId}`}><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link>
             </div>
         );
     }

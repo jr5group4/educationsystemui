@@ -181,7 +181,7 @@ class GetStudentById extends Component{
                   </tbody>
               </table> <br></br>
                 </React.Fragment>}
-            <Link to="/students"><button className="btn btn-info">Back</button></Link> 
+            <Link to="/students"><button className="btn btn-info"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button></Link> 
         </div>
         );
         

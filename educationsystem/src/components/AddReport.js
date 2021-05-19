@@ -114,7 +114,7 @@ class AddReport extends Component{
                        <div class="red_color">{this.state.errors.studentId}</div><br></br>
                    </div>
                        <button className="btn btn-success" onClick={this.addNewReport}>ADD Report</button> &nbsp;&nbsp;
-                       <Link to="/admin"> <button className="btn btn-default">Cancel</button></Link> 
+                       <Link to="/admin"> <button className="btn btn-outline-secondary btn_space btn_size">Cancel</button></Link> 
                    </form>
                </div>
        );

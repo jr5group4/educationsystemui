@@ -18,9 +18,7 @@ class Admin extends Component{
                 <Link to="/addreport">
                     <button className="btn btn-info">Add Report</button>
                 </Link> &nbsp;
-                <Link to="/addcourse">
-                    <button className="btn btn-info">Add Course</button>
-                </Link> &nbsp;
+                
                 <Link to="/addmessage">
                     <button className="btn btn-info">Add Message</button>
                 </Link> &nbsp;
@@ -30,7 +28,7 @@ class Admin extends Component{
                 <Link to="/addtrainer">
                     <button className="btn btn-info">Add Trainer</button>
                 </Link> &nbsp;
-                <button className="btn btn-danger" id="bt" onClick={this.logout}>Logout</button>
+                <button className="btn btn-danger" id="bt" onClick={this.logout}>Logout<i class="fa fa-sign-out" aria-hidden="true"></i></button>
             <div className="admin"></div>
             </div>
 

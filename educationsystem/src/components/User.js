@@ -29,7 +29,9 @@ class User extends Component{
                 <Link to="/addstudent">
                     <button className="btn btn-info">Add Student</button>
                 </Link> &nbsp;
-        
+                <Link to="/addcourse">
+                    <button className="btn btn-info">Add Course</button>
+                </Link> &nbsp;
                 <Link to="/courses">
                     <button className="btn btn-info">View All Courses</button>
                 </Link> &nbsp;
