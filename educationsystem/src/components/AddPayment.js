@@ -13,7 +13,8 @@ class AddPayment extends Component{
             paymentDue : '',
             feePaid : '',
             feeStatus: '',
-            courseId :'',
+             courseId :'',
+            studentId : '',
             studentId : '',
             errors:{}
         }

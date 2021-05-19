@@ -21,6 +21,25 @@ export const getTrainers = () => {
     };
 };
 
+export const getAvailableTrainerSuccess = (availabletrainers) => {
+    console.log("inside getAvailableTrainerSuccess method");
+    return{
+        type : 'GET_AVAILABLE_TRAINERS_SUCCESS',availabletrainers
+    }
+};
+
+export const getAvailableTrainers = () => {
+    console.log("inside Get Available Trainers method");
+        return (dispatch)=> {
+        return axios.get(TRAINERURL+"/getallavailable")
+        .then(Response => {
+            localStorage.setItem("availabletrainers",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getAvailableTrainerSuccess(Response.data));
+        })
+    };
+};
+
 export const addTrainerSuccess=()=>{
     console.log("inside addTrainerSuccess method");
     return {
@@ -34,9 +53,7 @@ export const addTrainer = (payload) =>{
         trainerName : payload.trainerName,
         phoneNumber : payload.phoneNumber,
         trainerExperience : payload.trainerExperience,
-        trainerEmailId : payload.trainerEmailId,
-        //studentId : payload.studentId,
-        courseId : payload.courseId
+        trainerEmailId : payload.trainerEmailId
     }
     return (dispatch)=> {
         return axios.post(TRAINERURL+"/add",trainer)

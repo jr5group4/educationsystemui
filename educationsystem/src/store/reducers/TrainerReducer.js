@@ -1,5 +1,6 @@
 const initialState = {
     trainers : [],
+    availabletrainers : [],
     addtrainer : undefined,
     gettrainer : [],
     gettrainercourse : [],
@@ -14,6 +15,11 @@ export default function TrainerReducer(state=initialState,action){
             return {
             ...state,
             trainers : action.trainers
+        };
+        case 'GET_AVAILABLE_TRAINERS_SUCCESS':
+            return {
+            ...state,
+            availabletrainers : action.availabletrainers
         };
         case 'TRAINER_ADDED' :
             return {
