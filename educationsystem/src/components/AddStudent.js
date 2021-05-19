@@ -41,6 +41,16 @@ class AddStudent extends Component{
             formIsValid = false
             errors['phoneNumber']='*Please enter phone number'
         }
+        else if(!/^[0-9\b]+$/.test(this.state.phoneNumber))
+        {
+            formIsValid = false
+            errors['phoneNumber']='*Please enter only number'
+        }
+        else if(this.state.phoneNumber.length !=10)
+        {
+            formIsValid = false
+            errors['phoneNumber']='*Please enter valid phone number'
+        }
         if(!this.state.studentEmailId)
         {
             formIsValid = false

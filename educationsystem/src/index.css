@@ -23,3 +23,6 @@ code {
 .btn_size{
   width: 100px ;
 }
+.btn-topspace{
+  margin-top: 10px;
+}
