@@ -46,7 +46,7 @@ class AddStudent extends Component{
             formIsValid = false
             errors['phoneNumber']='*Please enter only number'
         }
-        else if(this.state.phoneNumber.length !=10)
+        else if(this.state.phoneNumber.length !==10)
         {
             formIsValid = false
             errors['phoneNumber']='*Please enter valid phone number'
