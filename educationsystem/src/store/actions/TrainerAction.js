@@ -142,13 +142,6 @@ export const deleteTrainer = (trainerId) =>{
             throw(Error);
         });
     };
-};
-
-export const editPaymentSuccess=()=>{
-    console.log("inside editPaymentSuccess method");
-    return {
-        type : 'PAYMENT_EDITED'
-    }
 }; 
 
 export const registerTrainerSuccess=()=>{
@@ -168,6 +161,29 @@ export const registerTrainer = (trainerId,studentId) =>{
         })
         .catch(Error=> {
             console.log("Error");
+            throw(Error);
+        });
+    };
+};
+
+export const getTrainerByCourseSuccess = (gettrainercourse) => {
+    console.log("inside getTrainerByCourseSuccess method");
+    return {
+        type : 'GET_TRAINER_BY_COURSE_SUCCESS',gettrainercourse
+    }
+};
+
+export const getTrainerByCourse = (courseId) => {
+    console.log("inside getTrainerByCourse method");
+    return (dispatch)=> {
+        return axios.get(TRAINERURL+"/getbycourse/"+courseId)
+        .then(Response => {
+            localStorage.setItem("gettrainercourse",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getTrainerByCourseSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
             throw(Error);
         });
     };
