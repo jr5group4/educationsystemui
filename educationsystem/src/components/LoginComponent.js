@@ -90,7 +90,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                          <div class="red_color">{this.state.errors.role}</div><br></br>
                 </div>
                      <button className="btn btn-success mt-1 mb-4 btn_size " onClick={this.validation}>Login</button>
-                     <button className="btn btn-info mt-1 mb-4 btn_space btn_size" id="bt" onClick={this.signup}>Sign Up</button>
+                     {/* <button className="btn btn-info mt-1 mb-4 btn_space btn_size" id="bt" onClick={this.signup}>Sign Up</button> */}
                      </form>
             </div></div>
             </div>
